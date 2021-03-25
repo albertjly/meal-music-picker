@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+ul,
+ol {
+  list-style: none;
+}
+button {
+  outline: none;
+}
+/***************************** header - start *****************************/
+header {
+  background-color: #ffdf7e;
+  height: 80px;
+  text-align: center;
+}
+header h1 {
+  display: inline-block;
+  line-height: 80px;
+}
+header button {
+  float: right;
+  width: 100px;
+  height: 100%;
+  background-color: orange;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+/****************************** header - end ******************************/
+/***************************** nav - start *****************************/
+nav {
+  padding: 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+nav ul {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  height: 35px;
+}
+nav ul li {
+  float: left;
+  width: 22%;
+  background-color: #ffdf7e;
+  border: 2px solid orange;
+  border-radius: 8px;
+  text-align: center;
+}
+nav ul li a {
+  display: block;
+  line-height: 35px;
+}
+/****************************** nav - end ******************************/
+/***************************** meal - start *****************************/
+#meal .container {
+  margin: 0 auto;
+  display: flex;
+  width: 80%;
+  height: 300px;
+}
+#meal .container .meal-img {
+  flex: 2;
+  background-color: #ffdf7e;
+  margin-right: 20px;
+  border: 2px solid orange;
+  border-radius: 10px;
+}
+#meal .container .meal-detail {
+  flex: 1;
+  text-align: center;
+  background-color: lemonchiffon;
+  border: 2px solid orange;
+  border-radius: 10px;
+}
+/****************************** meal - end ******************************/
+/***************************** protein - start *****************************/
+#protein {
+  background-color: blue;
+}
+/****************************** protein - end ******************************/
+/***************************** health-tag - start *****************************/
+#health-tag {
+  background-color: yellow;
+}
+/****************************** health-tag - end ******************************/
+/***************************** footer - start *****************************/
+footer {
+  background-color: grey;
+}
+/****************************** footer - end ******************************/
+/*# sourceMappingURL=index.css.map */
