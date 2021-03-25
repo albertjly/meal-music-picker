@@ -38,6 +38,4 @@ window.onload=function(){
     var musicPlay = document.getElementById('audio');
     musicPlay.src = 'https://cdns-preview-b.dzcdn.net/stream/c-b805a55caedd124afe51f51315428e09-3.mp3';
     
-    Audio.load();
-    Audio.play();
     }
