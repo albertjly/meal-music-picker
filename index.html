@@ -2,34 +2,153 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meal & Music Picker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
-    <header>
-        <h1>Healthy Meal</h1>
-        <button>Jump to Recipe Box</button>
+    <header class="container">
+        <h1 class="title is-1">Healthy Meal</h1>
+<!--        <button>Jump to Recipe Box</button>-->
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Meal</a></li>
-            <li><a href="#">Protein</a></li>
-            <li><a href="#">Health Tag</a></li>
-            <li><a href="#">Randomized</a></li>
+    <nav class="container is-justify-content-center">
+        <ul class="columns is-justify-content-center is-gapless is-variable">
+            <li class="dropdown column is-one-fifth m-2" id="mealType">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
+                        <span>Meal Type</span>
+                        <span class="icon is-small ml-5">
+        <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
+      </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu1" role="menu">
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                            Breakfast
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Lunch
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Dinner
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Snack
+                        </a>
+                        <!--<a href="#" class="dropdown-item">
+                            Elements
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Components
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Layout
+                        </a>-->
+                        <!--<hr class="dropdown-divider">
+                        <a href="#" class="dropdown-item">
+                            More
+                        </a>-->
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown column is-one-fifth m-2 is-active">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                        <span>Protein</span>
+                        <span class="icon is-small ml-5">
+        <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
+      </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                            Chicken
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Beef
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Pork
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Fish
+                        </a>
+                        <!--<a href="#" class="dropdown-item">
+                            Elements
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Components
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Layout
+                        </a>-->
+                        <!--<hr class="dropdown-divider">
+                        <a href="#" class="dropdown-item">
+                            More
+                        </a>-->
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown column is-one-fifth m-2">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                        <span>Meal Type</span>
+                        <span class="icon is-small ml-5">
+        <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
+      </span>
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                            Breakfast
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Lunch
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Dinner
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Snack
+                        </a>
+                        <!--<a href="#" class="dropdown-item">
+                            Elements
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Components
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Layout
+                        </a>-->
+                        <!--<hr class="dropdown-divider">
+                        <a href="#" class="dropdown-item">
+                            More
+                        </a>-->
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown column is-one-fifth m-2"><a href="#">Randomized</a></li>
         </ul>
     </nav>
     <section id="meal">
         <div class="container">
             <div class="meal-img"></div>
             <div class="meal-detail">
-                <h1 class="meal-title">meal-title</h1>
+                <h1 class="meal-title title is-3">meal-title</h1>
                 <div class="meal-ingredients">meal-ingredient</div>
             </div>
         </div>
     </section>
+    <section id="protein">protein</section>
+    <section id="health-tag">health-tag</section>
+
     <section id="music-container">
         <div class="container">
             <figure>
@@ -39,10 +158,20 @@
             
         </div>
     </section>
-    <section id="protein">protein</section>
-    <section id="health-tag">health-tag</section>
+
+
+
     <footer>footer</footer>
 
-    <script src="assets/js/index.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        var dropdown = document.querySelector('.dropdown');
+        dropdown.addEventListener('click', function(event) {
+            event.stopPropagation();
+            dropdown.classList.toggle('is-active');
+        });
+    </script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>
