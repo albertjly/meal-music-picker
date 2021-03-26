@@ -11,27 +11,30 @@
 <body>
     <header>
         <h1>Healthy Meal</h1>
-        <button>Jump to Recipe Box</button>
+        <button id="box">Jump to Recipe Box</button>
     </header>
     <nav>
         <ul>
             <li><a href="#">Meal</a></li>
             <li><a href="#">Protein</a></li>
             <li><a href="#">Health Tag</a></li>
-            <li><a href="#">Randomized</a></li>
+            <li id="randomize"><a href="#">Randomized</a></li>
         </ul>
     </nav>
     <section id="meal">
         <div class="container">
             <div class="meal-img"></div>
             <div class="meal-detail">
-                <h1 class="meal-title">meal-title</h1>
-                <div class="meal-ingredients">meal-ingredient</div>
+                <h1 class="meal-title"></h1>
+                <div class="yield"></div>
+                <div class="meal-ingredients"></div>
             </div>
         </div>
     </section>
     <section id="protein">protein</section>
     <section id="health-tag">health-tag</section>
     <footer>footer</footer>
+
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>
