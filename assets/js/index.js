@@ -19,7 +19,7 @@ fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=chicken" , {
 });
 
 // variable for music chosen
-window.onload=function(){
+window.onload=function(){    
     var chosenMusic = fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=chicken" , {
         "method": "GET",
         "headers": {
