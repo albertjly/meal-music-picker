@@ -40,23 +40,10 @@
                         <a href="#" class="dropdown-item">
                             Snack
                         </a>
-                        <!--<a href="#" class="dropdown-item">
-                            Elements
-                        </a>
-                        <a href="#" class="dropdown-item">
-                            Components
-                        </a>
-                        <a href="#" class="dropdown-item">
-                            Layout
-                        </a>-->
-                        <!--<hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">
-                            More
-                        </a>-->
                     </div>
                 </div>
             </li>
-            <li class="dropdown column is-one-fifth m-2 is-active">
+            <li class="dropdown column is-one-fifth m-2">
                 <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
                         <span>Protein</span>
@@ -79,26 +66,19 @@
                         <a href="#" class="dropdown-item">
                             Fish
                         </a>
-                        <!--<a href="#" class="dropdown-item">
-                            Elements
+                        <a href="#" class="dropdown-item">
+                            Turkey
                         </a>
                         <a href="#" class="dropdown-item">
-                            Components
+                            Randomize
                         </a>
-                        <a href="#" class="dropdown-item">
-                            Layout
-                        </a>-->
-                        <!--<hr class="dropdown-divider">
-                        <a href="#" class="dropdown-item">
-                            More
-                        </a>-->
                     </div>
                 </div>
             </li>
             <li class="dropdown column is-one-fifth m-2">
                 <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                        <span>Meal Type</span>
+                        <span>Health Tag</span>
                         <span class="icon is-small ml-5">
         <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
       </span>
@@ -107,30 +87,32 @@
                 <div class="dropdown-menu" id="dropdown-menu3" role="menu">
                     <div class="dropdown-content">
                         <a href="#" class="dropdown-item">
-                            Breakfast
+                            Alcohol-free
                         </a>
                         <a href="#" class="dropdown-item">
-                            Lunch
+                            Diary-free
                         </a>
                         <a href="#" class="dropdown-item">
-                            Dinner
+                            Shellfish-free
                         </a>
                         <a href="#" class="dropdown-item">
-                            Snack
-                        </a>
-                        <!--<a href="#" class="dropdown-item">
-                            Elements
+                            Gluten-free
                         </a>
                         <a href="#" class="dropdown-item">
-                            Components
+                            Pork-free
                         </a>
                         <a href="#" class="dropdown-item">
-                            Layout
-                        </a>-->
-                        <!--<hr class="dropdown-divider">
+                            Peanut-free
+                        </a>
                         <a href="#" class="dropdown-item">
-                            More
-                        </a>-->
+                            Vegan
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Vegetarian
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Soy
+                        </a>
                     </div>
                 </div>
             </li>
@@ -153,11 +135,13 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>
-        var dropdown = document.querySelector('.dropdown');
-        dropdown.addEventListener('click', function(event) {
-            event.stopPropagation();
-            dropdown.classList.toggle('is-active');
-        });
+        var dropDown = $('li.dropdown');
+        for (var i = 0; i < dropDown.length; i++) {
+            dropDown[i].onclick = function(event) {
+                event.stopPropagation();
+                $(this).classList.toggle('is-active');
+            };
+        }
     </script>
     <script src="./assets/js/index.js"></script>
 </body>
