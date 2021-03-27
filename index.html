@@ -17,155 +17,164 @@
                 <h1 class="title is-1 column is-10">Healthy Meal</h1>
                 <button class="column is-2"><h2 class="title is-5">Jump to Recipe Box</h2></button>
     </header>
-
+    <!-- list  -->
     <nav class="container is-justify-content-center">
         <ul class="columns is-justify-content-center is-gapless is-variable">
-            <li class="dropdown column is-one-fifth m-2" id="mealType">
+            <!-- meal type list -->
+            <li class="dropdown is-hoverable column is-one-fifth m-2" id="mealType">
                 <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
-                        <span>Meal Type</span>
+                        <span id="meal-input">Meal Type</span>
                         <span class="icon is-small ml-5">
-        <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
-      </span>
+                            <i class="fas fa-angle-down ml-5" aria-hidden="true"></i>
+                        </span>
                     </button>
                 </div>
                 <div class="dropdown-menu" id="dropdown-menu1" role="menu">
                     <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Breakfast")'>
                             Breakfast
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Lunch")'>
                             Lunch
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Dinner")'>
                             Dinner
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Snack")'>
                             Snack
                         </a>
                     </div>
                 </div>
             </li>
-            <li class="dropdown column is-one-fifth m-2">
+
+            <!-- protein type list -->
+            <li class="dropdown is-hoverable column is-one-fifth m-2">
                 <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-                        <span>Protein</span>
+                        <span id="protien-input">Protein</span>
                         <span class="icon is-small ml-5">
-        <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
-      </span>
+                            <i class="fas fa-angle-down ml-5" aria-hidden="true"></i>
+                        </span>
                     </button>
                 </div>
                 <div class="dropdown-menu" id="dropdown-menu2" role="menu">
                     <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Chicken")'>
                             Chicken
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Beef")'>
                             Beef
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Pork")'>
                             Pork
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Fish")'>
                             Fish
                         </a>
-                        <a href="#" class="dropdown-item">
-                            Turkey
+                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Turkey")'>
+                           Turkey
                         </a>
-                        <a href="#" class="dropdown-item">
-                            Randomize
-                        </a>
-                    </div>
+                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Vegetarian")'>
+                            Vegetarian
+                         </a>
+                     </div>
                 </div>
             </li>
-            <li class="dropdown column is-one-fifth m-2">
+            <!-- health tag list -->
+            <li class="dropdown is-hoverable column is-one-fifth m-2">
                 <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                        <span>Health Tag</span>
+                        <span id="health-input">Health Tags</span>
                         <span class="icon is-small ml-5">
-        <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
-      </span>
+                            <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
+                        </span>
                     </button>
                 </div>
                 <div class="dropdown-menu" id="dropdown-menu3" role="menu">
                     <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Alcohol-free")'>
                             Alcohol-free
                         </a>
-                        <a href="#" class="dropdown-item">
-                            Diary-free
+                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Dairy-free")'>
+                            Dairy-free
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Shellfish-free")'>
                             Shellfish-free
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Gluten-free")'>
                             Gluten-free
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Pork-free")'>
                             Pork-free
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Peanut-Free")'>
                             Peanut-free
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Vegan")'>
                             Vegan
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Vegetarian")'>
                             Vegetarian
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Soy")'>
                             Soy
                         </a>
                     </div>
                 </div>
             </li>
-            <li class="dropdown column is-one-fifth m-2"><a href="#">Randomized</a></li>
+            <li class="column is-one-fifth m-2">
+                <button class="button btn-random" type="submit">
+                    Randomize
+                </button>
+            </li>
         </ul>
     </nav>
-
+    <!-- meal section start  -->
     <section id="meal">
         <div class="container">
             <div class="columns">
                 <div class="meal-img column is-8"></div>
                 <div class="meal-detail column is-4">
-                    <h1 class="meal-title title is-3">meal-title</h1>
-                    <div class="meal-ingredients">meal-ingredient</div>
+                    <div class="meal-title title is-3"></div>
+                    <div class="yield"></div>
+                    <div class="meal-ingredients"></div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- meal section end  -->
 
-    <section id="protein">
+    <!-- nutrition section start  -->
+    <section id="nutrition">
         <div class="container">
             <div class="columns is-justify-content-center">
                 <div class="diet-labels column is-2 p-0">
-                    <ul>
-                        <li><a href="#"><span class="title is-6">Calories</span></a></li>
-                        <li><a href="#"><span class="title is-6">Cholesterol</span></a></li>
-                        <li><a href="#"><span class="title is-6">Carbs</span></a></li>
-                        <li><a href="#"><span class="title is-6">Sodium</span></a></li>
-                        <li><a href="#"><span class="title is-6">Fat</span></a></li>
-                        <li><a href="#"><span class="title is-6">Sugar</span></a></li>
-                    </ul>
+                    <div class="diet-title title is-3">Diet Labels</div>
+                    <div class="diet-details"></div>
                 </div>
                 <div class="nutrition-facts column is-10 m-0">
-                    <p>
-                        Nutrition Facts (fetch from api)
-                    </p>
+                    <div class="nutrition-title title is-3">Nutrition Facts</div>
+                    <div class="nutrition-details"></div>
                 </div>
             </div>
         </div>
     </section>
+     <!-- nutrition section end  -->
 
-    <section id="health-tag">
+    <section id="music-container">
         <div class="container">
             <div class="columns is-flex-direction-column">
-                <div class="music column is-12">1</div>
+                <div class="music column is-12">
+                    <figure>
+                        <figcaption>A Song Based on Your Meal Preferences:</figcaption>
+                            <audio id="audio" controls></audio>
+                    </figure>
+                </div>
                 <div class="music-description column is-12">2</div>
             </div>
         </div>
     </section>
-
     <footer>
         <div class="container">
             <div class="columns is-gapless is-justify-content-space-between">
@@ -174,7 +183,6 @@
             </div>
         </div>
     </footer>
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="./assets/js/index.js"></script>
