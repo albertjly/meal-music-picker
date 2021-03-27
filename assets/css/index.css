@@ -6,18 +6,6 @@ header .container .columns {
   width: 90%;
   margin: 0 auto;
   height: 80px;
-<<<<<<< HEAD
-  width: 100px;
-}
-
-header h1 {
-  line-height: 80px;
-}
-
-header button {
-  width: 100px;
-  height: 100%;
-=======
   line-height: 80px;
 }
 header .container .columns h1 {
@@ -25,7 +13,6 @@ header .container .columns h1 {
 }
 header .container .columns button {
   height: 80px;
->>>>>>> main
   background-color: orange;
   border-radius: 10px;
   cursor: pointer;
@@ -52,12 +39,8 @@ nav ul li .dropdown-trigger button {
   height: 300px;
   margin-top: 20px;
 }
-<<<<<<< HEAD
-#meal .container .meal-img {
-  flex: 1;
-=======
+
 #meal .container .columns .meal-img {
->>>>>>> main
   background-color: #ffdf7e;
   margin-right: 20px;
   border: 2px solid orange;
@@ -70,58 +53,31 @@ nav ul li .dropdown-trigger button {
   border-radius: 10px;
 }
 /****************************** meal - end ******************************/
-<<<<<<< HEAD
 
 /***************************** nutrition - start *****************************/
 #nutrition .container {
-  margin: 0 auto;
-  display: flex;
-  width: 80%;
-  height: 300px;
-  margin-top: 20px;
-}
-#nutrition .container .diet-labels {
-  flex: 1;
-  text-align: center;
-  background-color: #ffdf7e;
-  margin-right: 20px;
-  border: 2px solid orange;
-  border-radius: 10px;
-}
-#nutrition .container .nutrition-detail {
-  flex: 2;
-  text-align: center;
-  background-color: lemonchiffon;
-  border: 2px solid orange;
-  border-radius: 10px;
-}
-
-#protein {
-  background-color: blue;
-=======
-/***************************** protein - start *****************************/
-#protein .container {
   margin-top: 10px;
 }
-#protein .container .columns {
+
+#nutrition .container .columns {
   margin: 0 auto;
   width: 90%;
 }
-#protein .container .columns .diet-labels ul li {
+#nutrition .container .columns .diet-labels ul li {
   margin: 0.3rem;
 }
-#protein .container .columns .diet-labels ul li a {
+#nutrition .container .columns .diet-labels ul li a {
   background-color: lemonchiffon;
   border: 2px solid orange;
   border-radius: 5px;
   display: block;
   width: 100%;
 }
-#protein .container .columns .diet-labels ul li a:hover span {
+#nutrition .container .columns .diet-labels ul li a:hover span {
   color: orangered;
   font-weight: bolder;
 }
-#protein .container .columns .nutrition-facts {
+#nutrition .container .columns .nutrition-facts {
   background-color: #ffdf7e;
   border-radius: 10px;
 >>>>>>> main
@@ -129,21 +85,21 @@ nav ul li .dropdown-trigger button {
 /****************************** nutrition - end ******************************/
 
 /***************************** health-tag - start *****************************/
-#health-tag .container {
+#music-container .container {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#health-tag .container .columns {
+#music-container .container .columns {
   margin: 0 auto;
   width: 90%;
 }
-#health-tag .container .columns .music {
+#music-container .container .columns .music {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: #ffdf7e;
   height: 200px;
 }
-#health-tag .container .columns .music-description {
+#music-container .container .columns .music-description {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   background-color: orange;
