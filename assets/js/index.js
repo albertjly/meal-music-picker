@@ -71,7 +71,10 @@ var randomizeHandler = function (event) {
                    
     } else {
         getRecipeData();
-    }    
+        getMusic();
+    }
+    
+    
 }
 
 //fetch meal information 
@@ -191,6 +194,47 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
 
 
 }
+
+// variable for music chosen
+var musicTitleCon = document.querySelector(".music-title");
+var getMusic = function(){  
+
+    fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + protein, {
+         "method": "GET",
+         "headers": {
+             "x-rapidapi-key": "745e72bfb2mshcd1b1af9ded37c3p1ca71djsnfeb89c9db301",
+             "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+         }
+     })
+     .then(response => response.json())
+     .then((response) => {
+        function getPreviewMusic() {
+            return Math.floor(Math.random() * 24) +1;   
+        }
+        var randomSong = getPreviewMusic();
+         var chosenMusic = response.data[randomSong].preview;
+         var songTitle = "Song Title: " + "'" + response.data[randomSong].title + "'";
+         var songArtist = "  Artist: " + response.data[randomSong].artist.name ;
+         
+    //append to html
+     var musicPlay = document.getElementById('audio');
+     musicPlay.src = chosenMusic ;
+    
+     var songHeader = document.createElement('h1');
+     songHeader.setAttribute('class', 'title is-3');
+     songHeader.innerHTML = songTitle;
+     musicTitleCon.append(songTitle);
+     musicTitleCon.append(songArtist);
+     })
+
+}
+ 
+//onclick save to localstorage
+var saveStorage = function(){
+    localStorage.setItem(getRecipeData, JSON.stringify(getRecipeData));
+    console.log(saveStorage);
+}
+
 
 var clear = function () {
     mealIngredientsCon.innerHTML = ""; 
