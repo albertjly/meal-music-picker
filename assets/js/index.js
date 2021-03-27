@@ -208,6 +208,7 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
 }
 
 // variable for music chosen
+var musicTitleCon = document.querySelector(".music-title");
 var getMusic = function(){  
 
     fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + protein, {
@@ -231,6 +232,10 @@ var getMusic = function(){
      var musicPlay = document.getElementById('audio');
      musicPlay.src = chosenMusic ;
     
+     var songHeader = document.createElement('h1');
+     songHeader.setAttribute('class', 'title is-3');
+     songHeader.innerHTML = songTitle;
+     musicTitleCon.append(songTitle);
      
      })
 
