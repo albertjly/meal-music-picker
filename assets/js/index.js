@@ -219,11 +219,19 @@ var getMusic = function(){
      })
      .then(response => response.json())
      .then((response) => {
-         let chosenMusic = response.data[2].preview;
-         //append to html
+        function getPreviewMusic() {
+            return Math.floor(Math.random() * 24) +1;   
+        }
+        var randomSong = getPreviewMusic();
+         var chosenMusic = response.data[randomSong].preview;
+         var songTitle = response.data[randomSong].title;
+         var songArtist = response.data[randomSong].artist
+         
+    //append to html
      var musicPlay = document.getElementById('audio');
      musicPlay.src = chosenMusic ;
- 
+    
+     
      })
 
 }
