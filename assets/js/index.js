@@ -1,4 +1,4 @@
-var protien = document.querySelector("#protein-search");
+var protien = document.querySelector(".protein-option");
 
 
 
