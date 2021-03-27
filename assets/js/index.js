@@ -9,6 +9,7 @@ var mealIngredientsCon = document.querySelector(".meal-ingredients");
 var dietLabelCon = document.querySelector(".diet-details");
 var nutritionInfoCon = document.querySelector(".nutrition-facts")
 var recipeBoxButton = document.querySelector(".box");
+var recipeCon = document.querySelector(".recipes-box");
 
 //Recipies Key/ID
 var app_key = "bfff307b245dc8b98d49e452f8586302";
@@ -87,7 +88,7 @@ var getRecipeData = function () {
             .then(function(response){
                 if (response.ok) {
                     response.json().then(function (data) {
-                        console.log(data);
+                       // console.log(data);
                       
                         //random
                         function getRandomInt() {
@@ -110,7 +111,7 @@ var getRecipeData = function () {
                             "Sugar: " + Math.round(data.hits[randomInt].recipe.totalNutrients.SUGAR.quantity) + data.hits[randomInt].recipe.totalNutrients.SUGAR.unit
                         ];
 
-                        console.log(nutritionInfo);
+                       // console.log(nutritionInfo);
                         
                         displayRecipe(title, img, yield, ingridents, dietLabels, nutritionInfo);
                         //store to local storage
@@ -229,10 +230,28 @@ var getMusic = function(){
 }
 
   //onclick save to localstorage
-  var saveStorage = function(){
+ 
+
+    //recipeCon.append(storedRecipe);
+    
+
+var saveStorage = function(){
       //console.log(title);
      localStorage.setItem(title, JSON.stringify(title));
-}
+     
+    var storedRecipe = {title: title};
+
+
+    recipeSave = function(){
+       var getStore =  JSON.parse(localStorage.getItem('title')) || [] ;
+       
+    
+       localStorage.setItem('getStore', JSON.stringify(getStore));
+       console.log(storedRecipe);
+    }
+    
+    recipeSave();
+}   
 
 
 

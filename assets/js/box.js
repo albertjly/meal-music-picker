@@ -1,11 +1,2 @@
-var storedRecipe = [];
+var recipeCon = document.querySelector(".recipes-box");
 
-window.onload = function(){
-    storedRecipe = function(){
-        localStorage.getItem(getRecipeData);
-        console.log(getRecipeData);
-    }
-}
-
-var recipeCon = document.querySelector(".recipes");
-recipeCon.append(storedRecipe);
