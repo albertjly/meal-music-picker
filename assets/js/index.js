@@ -225,8 +225,8 @@ var getMusic = function(){
         }
         var randomSong = getPreviewMusic();
          var chosenMusic = response.data[randomSong].preview;
-         var songTitle = response.data[randomSong].title;
-         var songArtist = response.data[randomSong].artist
+         var songTitle = "Song Title: " + "'" + response.data[randomSong].title + "'";
+         var songArtist = "  Artist: " + response.data[randomSong].artist.name ;
          
     //append to html
      var musicPlay = document.getElementById('audio');
@@ -236,7 +236,7 @@ var getMusic = function(){
      songHeader.setAttribute('class', 'title is-3');
      songHeader.innerHTML = songTitle;
      musicTitleCon.append(songTitle);
-     
+     musicTitleCon.append(songArtist);
      })
 
 }
