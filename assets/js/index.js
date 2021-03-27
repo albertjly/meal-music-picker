@@ -20,6 +20,7 @@ var app_id = "0eb52ae4";
 var mealType = '';
 var protein = '';
 var health= '';
+
 //var proteinArray = ["Chicken", "Beef", "Pork", "Fish" , "Turkey"]
 
 
@@ -69,20 +70,7 @@ var randomizeHandler = function (event) {
        modalButton.addEventListener("click", function() {
         modal.classList.remove('is-active')
        });
-       
 
-
-
-    //    $('body').append
-    //    (<div class="modal">
-    //     <div class="modal-background"></div>
-    //     <div class="modal-content">
-    //         "Please pick a meal type, protein, and health tag!"
-    //     </div>
-    //         <button class="modal-close is-large" aria-label="close"></button>
-       
-           
-                   
     } else {
         getRecipeData();
         getMusic();
@@ -90,27 +78,25 @@ var randomizeHandler = function (event) {
     
     
 }
-
+var title;
 //fetch meal information 
 var getRecipeData = function () {
     var mealUrl = "https://api.edamam.com/search?q=" + protein + "&app_id=" + app_id + "&app_key="+ app_key; + "&mealType=" + mealType + "&health=" + health;
     
-    var recipe 
         fetch(mealUrl)
             .then(function(response){
                 if (response.ok) {
                     response.json().then(function (data) {
                         console.log(data);
-
+                      
                         //random
                         function getRandomInt() {
                             return Math.floor(Math.random() * 9) +1;   
                         }
 
-                
                         //recipeie data 
                         var randomInt = getRandomInt();
-                        var title = data.hits[randomInt].recipe.label;
+                        title = data.hits[randomInt].recipe.label;
                         var img = data.hits[randomInt].recipe.image;
                         var yield = data.hits[randomInt].recipe.yield;
                         var ingridents = data.hits[randomInt].recipe.ingredientLines;
@@ -228,6 +214,7 @@ var getMusic = function(){
          var songTitle = "Song Title: " + "'" + response.data[randomSong].title + "'";
          var songArtist = "  Artist: " + response.data[randomSong].artist.name ;
          
+
     //append to html
      var musicPlay = document.getElementById('audio');
      musicPlay.src = chosenMusic ;
@@ -240,12 +227,13 @@ var getMusic = function(){
      })
 
 }
- 
-//onclick save to localstorage
-var saveStorage = function(){
-    localStorage.setItem(getRecipeData, JSON.stringify(getRecipeData));
-    console.log(saveStorage);
+
+  //onclick save to localstorage
+  var saveStorage = function(){
+      //console.log(title);
+     localStorage.setItem(title, JSON.stringify(title));
 }
+
 
 
 var clear = function () {

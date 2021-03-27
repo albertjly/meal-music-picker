@@ -6,3 +6,6 @@ window.onload = function(){
         console.log(getRecipeData);
     }
 }
+
+var recipeCon = document.querySelector(".recipes");
+recipeCon.append(storedRecipe);
