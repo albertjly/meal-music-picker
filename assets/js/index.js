@@ -7,7 +7,7 @@ var mealTitleCon = document.querySelector(".meal-title");
 var mealYieldCon = document.querySelector(".yield");
 var mealIngredientsCon = document.querySelector(".meal-ingredients");
 var dietLabelCon = document.querySelector(".diet-details");
-var nutritionInfoCon = document.querySelector(".nutrition-details")
+var nutritionInfoCon = document.querySelector(".nutrition-facts")
 var recipeBoxButton = document.querySelector(".box");
 
 //Recipies Key/ID
