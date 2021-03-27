@@ -11,8 +11,8 @@ var nutritionInfoCon = document.querySelector(".nutrition-facts")
 var recipeBoxButton = document.querySelector(".box");
 
 //Recipies Key/ID
-var app_key = "bfff307b245dc8b98d49e452f8586302";
-var app_id = "0eb52ae4"; 
+var app_key = "3a6631ade0c97e6a097cc13ba9e1ff33";
+var app_id = "49d9431a"; 
 
 
 
@@ -20,7 +20,7 @@ var app_id = "0eb52ae4";
 var mealType = '';
 var protein = '';
 var health= '';
-//var proteinArray = ["Chicken", "Beef", "Pork", "Fish" , "Turkey"]
+
 
 
 //update drop downs
@@ -28,6 +28,7 @@ var updateMealDropDown = function(dropDownSelection) {
     //alert(i);
     document.getElementById("meal-input").innerHTML = dropDownSelection ; 
     mealType = dropDownSelection;
+    console.log(mealType);
 
 
 }
@@ -42,15 +43,13 @@ var updateHealthDropDown = function(dropDownSelection) {
 }
 
 
-
 // on click randomize
 var randomizeHandler = function (event) {
     event.preventDefault();
-    // clear();
 
-    if(mealType === "" || protein === "" || health === "") {
-       //alert("Please pick a meal type, protein, and health tag!")
+    if(mealType === "" || protein === "" && health === "") {
        
+        //modal("Please pick a meal type, protein, and health tag!")
        var modal = document.createElement("div");
        modal.setAttribute("class", "modal is-active");
        var modalBack = document.createElement("div");
@@ -69,31 +68,17 @@ var randomizeHandler = function (event) {
        modalButton.addEventListener("click", function() {
         modal.classList.remove('is-active')
        });
-       
-
-
-
-    //    $('body').append
-    //    (<div class="modal">
-    //     <div class="modal-background"></div>
-    //     <div class="modal-content">
-    //         "Please pick a meal type, protein, and health tag!"
-    //     </div>
-    //         <button class="modal-close is-large" aria-label="close"></button>
-       
-           
                    
     } else {
         getRecipeData();
-    }
-    
-    
+    }    
 }
 
 //fetch meal information 
 var getRecipeData = function () {
-    var mealUrl = "https://api.edamam.com/search?q=" + protein + "&app_id=" + app_id + "&app_key="+ app_key; + "&mealType=" + mealType + "&health=" + health;
-    
+    var mealUrl = `https://api.edamam.com/search?q=${protein}&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&healh=${health}`;
+    console.log(mealType);
+    console.log(health);
     var recipe 
         fetch(mealUrl)
             .then(function(response){
@@ -123,7 +108,8 @@ var getRecipeData = function () {
                             "Sugar: " + Math.round(data.hits[randomInt].recipe.totalNutrients.SUGAR.quantity) + data.hits[randomInt].recipe.totalNutrients.SUGAR.unit
                         ];
 
-                        console.log(nutritionInfo);
+                        console.log(title, dietLabels);
+                        console.log(randomInt);
                         
                         displayRecipe(title, img, yield, ingridents, dietLabels, nutritionInfo);
                         //store to local storage
@@ -215,7 +201,6 @@ var clear = function () {
     nutritionInfoCon.innerHTML = "";
 
 }
-
 
 //event listeners for search click
 randomButton.addEventListener("click", randomizeHandler)
