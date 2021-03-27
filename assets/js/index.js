@@ -1,50 +1,94 @@
 
 //DOM Elements 
+var randomButton = document.querySelector(".btn-random");
+
 var mealImageCon = document.querySelector(".meal-img");
 var mealTitleCon = document.querySelector(".meal-title");
 var mealYieldCon = document.querySelector(".yield");
 var mealIngredientsCon = document.querySelector(".meal-ingredients");
-
-var recipeBoxButton = document.querySelector("#box");
+var dietLabelCon = document.querySelector(".diet-details");
+var nutritionInfoCon = document.querySelector(".nutrition-details")
+var recipeBoxButton = document.querySelector(".box");
 
 //Recipies Key/ID
 var app_key = "bfff307b245dc8b98d49e452f8586302";
 var app_id = "0eb52ae4"; 
-//var protein = []
 
-// var protien = protienInputEl.value();
-var protein = 'fish'
-// // var mealType =  mealInputEl.value();
-var mealType = 'lunch'
-// // var health= healthInputEl.value();
-var health = 'dairy-free'
 
-// function getRandomInt() {
-//     for (var i = 0; i < 9; i++){
-//         var num = Math.floor(Math.random() * 9) +1;
-//     }
-// }
+
+//Global Var
+var mealType = '';
+var protein = '';
+var health= '';
+//var proteinArray = ["Chicken", "Beef", "Pork", "Fish" , "Turkey"]
+
+
+//update drop downs
+var updateMealDropDown = function(dropDownSelection) {
+    //alert(i);
+    document.getElementById("meal-input").innerHTML = dropDownSelection ; 
+    mealType = dropDownSelection;
+
+
+}
+var updateProteinDropDown = function(dropDownSelection) {
+    //alert(i);
+    document.getElementById("protien-input").innerHTML = dropDownSelection ; 
+    protein = dropDownSelection;
+}
+var updateHealthDropDown = function(dropDownSelection) {
+    document.getElementById("health-input").innerHTML = dropDownSelection ; 
+    health = dropDownSelection;
+}
+
 
 
 // on click randomize
-
 var randomizeHandler = function (event) {
     event.preventDefault();
     // clear();
-    
-    //get values from drop down 
-    // var protien = protienInputEl.value();
-    // var mealType =  mealInputEl.value();
-    // var health= healthInputEl.value();
 
-    getRecipeData();
+    if(mealType === "" || protein === "" || health === "") {
+       //alert("Please pick a meal type, protein, and health tag!")
+       
+       var modal = document.createElement("div");
+       modal.setAttribute("class", "modal is-active");
+       var modalBack = document.createElement("div");
+       modalBack.setAttribute("class", "modal-background");
+       var modalContent = document.createElement("div");
+       modalContent.setAttribute("class", "modal-content is-clipped")
+       modalContent.innerHTML =  "Please pick a meal type, protein, and health tag!";
+       var modalButton = document.createElement("button");
+       modalButton.setAttribute("class", "modal-close is-large");
+       modalButton.setAttribute("aria-label", "close");
+       modalButton.setAttribute("type", "submit")
+
+       modal.append(modalBack,modalContent,modalButton);
+       $("body").append(modal);
+
+       modalButton.addEventListener("click", function() {
+        modal.classList.remove('is-active')
+       });
+       
+
+
+
+    //    $('body').append
+    //    (<div class="modal">
+    //     <div class="modal-background"></div>
+    //     <div class="modal-content">
+    //         "Please pick a meal type, protein, and health tag!"
+    //     </div>
+    //         <button class="modal-close is-large" aria-label="close"></button>
+       
+           
+                   
+    } else {
+        getRecipeData();
+    }
+    
     
 }
-// 
-
-
-
-
 
 //fetch meal information 
 var getRecipeData = function () {
@@ -57,31 +101,27 @@ var getRecipeData = function () {
                     response.json().then(function (data) {
                         console.log(data);
 
+                        //random
                         function getRandomInt() {
-                            for (var i = 0; i < 9; i++){
-                                var num = Math.floor(Math.random() * 9) +1;
-                            }
+                            return Math.floor(Math.random() * 9) +1;   
                         }
 
-                        var dataLength = data.hits;
-                        for (var i = 0; i < dataLength.length; i++) {
-                            console.log(dataLength[getRandomInt]);
-                        }
-
+                
                         //recipeie data 
-                        var title = data.hits[0].recipe.label;
-                        var img = data.hits[0].recipe.image;
-                        var yield = data.hits[0].recipe.yield;
-                        var ingridents = data.hits[0].recipe.ingredientLines;
-                        var dietLabels = data.hits[0].recipe.dietLabels;
-                        var nutritionInfo = {
-                            calories: "Calories: "+ Math.round(data.hits[0].recipe.calories),
-                            cholesterol: "Chloesterol: "+ Math.round(data.hits[0].recipe.totalNutrients.CHOLE.quantity) + data.hits[0].recipe.totalNutrients.CHOLE.unit,
-                            carbs: "Carbs: "+ Math.round(data.hits[0].recipe.totalNutrients.CHOCDF.quantity) + data.hits[0].recipe.totalNutrients.CHOCDF.unit,
-                            sodium: "Sodium: " +  Math.round(data.hits[0].recipe.totalNutrients.NA.quantity) + data.hits[0].recipe.totalNutrients.NA.unit,
-                            fat: "Fat: " + Math.round(data.hits[0].recipe.totalNutrients.FAT.quantity) + data.hits[0].recipe.totalNutrients.FAT.quantity,
-                            sugar: "Sugar: " + Math.round(data.hits[0].recipe.totalNutrients.SUGAR.quantity + data.hits[0].recipe.totalNutrients.FAT.quantity)
-                        };
+                        var randomInt = getRandomInt();
+                        var title = data.hits[randomInt].recipe.label;
+                        var img = data.hits[randomInt].recipe.image;
+                        var yield = data.hits[randomInt].recipe.yield;
+                        var ingridents = data.hits[randomInt].recipe.ingredientLines;
+                        var dietLabels = data.hits[randomInt].recipe.dietLabels;
+                        var nutritionInfo = [
+                            "Calories: "+ Math.round(data.hits[randomInt].recipe.calories),
+                             "Chloesterol: "+ Math.round(data.hits[randomInt].recipe.totalNutrients.CHOLE.quantity) + data.hits[randomInt].recipe.totalNutrients.CHOLE.unit,
+                             "Carbs: "+ Math.round(data.hits[randomInt].recipe.totalNutrients.CHOCDF.quantity) + data.hits[randomInt].recipe.totalNutrients.CHOCDF.unit,
+                             "Sodium: " +  Math.round(data.hits[randomInt].recipe.totalNutrients.NA.quantity) + data.hits[randomInt].recipe.totalNutrients.NA.unit,
+                             "Fat: " + Math.round(data.hits[randomInt].recipe.totalNutrients.FAT.quantity) + data.hits[randomInt].recipe.totalNutrients.FAT.unit,
+                            "Sugar: " + Math.round(data.hits[randomInt].recipe.totalNutrients.SUGAR.quantity) + data.hits[randomInt].recipe.totalNutrients.SUGAR.unit
+                        ];
 
                         console.log(nutritionInfo);
                         
@@ -107,8 +147,16 @@ var getRecipeData = function () {
 
 // display recipe inforamtion
 var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutritionInfo) {
+    clear();
+
+    //add meal img to bpage 
+    var mealImg = document.createElement("img");
+    mealImg.setAttribute("src", img);
+    mealImageCon.append(mealImg);
+    
     // add meal title 
     var mealTitle = document.createElement("h1");
+    mealTitle.setAttribute("class", "title is-3")
     mealTitle.innerHTML = title;
     mealTitleCon.append(mealTitle);
 
@@ -118,39 +166,56 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     mealYieldCon.append(mealYield);
 
     //add indirgent to page ARRAY
-    var mealIngr = document.createElement("li");
-    mealIngr.innerHTML = ingridents.values();
-    mealIngr.setAttribute('is-flex-direction-row','flex-direction: row')
-    //mealIngr.style.display = "flex flex-column";
-    // mealIngredientsCon.appendChild(mealIngr);
-    
-    //add meal img to bpage 
-    var mealImg = document.createElement("img");
-    mealImg.setAttribute("src", img);
-    mealImageCon.append(mealImg);
-
+    for (var i = 0; i<ingridents.length; i++) {
+        var mealIngr = document.createElement("li");
+        mealIngr.setAttribute("class", "is-lower-alpha")
+        mealIngr.innerHTML = ingridents[i];
+        mealIngr.setAttribute('is-flex-direction-row','flex-direction: row');
+        //mealIngr.style.display = "flex flex-column";
+        mealIngredientsCon.appendChild(mealIngr);
+    }
     // add diet labels to page ARRAY
-    var dietLabels = document.createElement("span");
-    dietLabels.setAttribute("class", "tag");
-    dietLabels.innerHTML = dietLabels;
-    //dietLabelCon.append(dietLabels)
+    if (dietLabels.length === 0) {
+        var dietLabelEl = document.createElement("span");
+        dietLabelEl.innerHTML = "No diet labels exsits"
+         dietLabelCon.append(dietLabelEl);
 
+    } else {
+        for (var i = 0; i<dietLabels.length; i++) {
+            var dietLabelEl = document.createElement("span");
+            dietLabelEl.setAttribute("class", "tag is-large is-light");
+            dietLabelEl.setAttribute('is-flex-direction-column','flex-direction: column');
+            dietLabelEl.setAttribute('is-justify-align-center', 'justify-align: center')
+            dietLabelEl.setAttribute('is-flex-wrap-wrap', 'flex-wrap: wrap')
+    
+           
+            dietLabelEl.innerHTML = dietLabels[i]
+        
+            //dietLabelEl.innerHTML = dietLabels[i];
+            dietLabelCon.append(dietLabelEl);
+        }
+    }    
+    
     //add nutrion info to page 
-    var nutrition = document.createElement("li");
-    nutrition.innerHTML = nutritionInfo.values;
-    // nutritionInfoCon.append(nutrition);
+    for (var i = 0; i<nutritionInfo.length; i++) {
+        var nutrition = document.createElement("li");
+        nutrition.innerHTML = nutritionInfo[i];
+        nutritionInfoCon.append(nutrition);
+    }
 
 
 }
 
 var clear = function () {
-    mealIngredientsCon = '';
-    mealYieldCon ='';
-    mealTitleCon = '';
-    mealImageCon = '';
+    mealIngredientsCon.innerHTML = ""; 
+    mealYieldCon.innerHTML = ""; 
+    mealTitleCon.innerHTML = ""; 
+    mealImageCon.innerHTML = ""; 
+    dietLabelCon.innerHTML = "";
+    nutritionInfoCon.innerHTML = "";
+
 }
 
 
-
 //event listeners for search click
-recipeBoxButton.addEventListener("click", randomizeHandler)
+randomButton.addEventListener("click", randomizeHandler)
