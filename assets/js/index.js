@@ -68,14 +68,19 @@ var randomizeHandler = function (event) {
        modalButton.addEventListener("click", function() {
         modal.classList.remove('is-active')
        });
-                   
+
     } else {
         getRecipeData();
-    }    
-}
+        getMusic();
+    }
+    
+    
 
+}
+var title;
 //fetch meal information 
 var getRecipeData = function () {
+
     var mealUrl = `https://api.edamam.com/search?q=${protein}&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&healh=${health}`;
     console.log(mealType);
     console.log(health);
@@ -85,16 +90,15 @@ var getRecipeData = function () {
                 if (response.ok) {
                     response.json().then(function (data) {
                         console.log(data);
-
+                      
                         //random
                         function getRandomInt() {
                             return Math.floor(Math.random() * 9) +1;   
                         }
 
-                
                         //recipeie data 
                         var randomInt = getRandomInt();
-                        var title = data.hits[randomInt].recipe.label;
+                        title = data.hits[randomInt].recipe.label;
                         var img = data.hits[randomInt].recipe.image;
                         var yield = data.hits[randomInt].recipe.yield;
                         var ingridents = data.hits[randomInt].recipe.ingredientLines;
@@ -191,6 +195,49 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
 
 
 }
+
+// variable for music chosen
+var musicTitleCon = document.querySelector(".music-title");
+var getMusic = function(){  
+
+    fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + protein, {
+         "method": "GET",
+         "headers": {
+             "x-rapidapi-key": "745e72bfb2mshcd1b1af9ded37c3p1ca71djsnfeb89c9db301",
+             "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+         }
+     })
+     .then(response => response.json())
+     .then((response) => {
+        function getPreviewMusic() {
+            return Math.floor(Math.random() * 24) +1;   
+        }
+        var randomSong = getPreviewMusic();
+         var chosenMusic = response.data[randomSong].preview;
+         var songTitle = "Song Title: " + "'" + response.data[randomSong].title + "'";
+         var songArtist = "  Artist: " + response.data[randomSong].artist.name ;
+         
+
+    //append to html
+     var musicPlay = document.getElementById('audio');
+     musicPlay.src = chosenMusic ;
+    
+     var songHeader = document.createElement('h1');
+     songHeader.setAttribute('class', 'title is-3');
+     songHeader.innerHTML = songTitle;
+     musicTitleCon.append(songTitle);
+     musicTitleCon.append(songArtist);
+     })
+
+}
+
+  //onclick save to localstorage
+  var saveStorage = function(){
+      //console.log(title);
+     localStorage.setItem(title, JSON.stringify(title));
+}
+
+
 
 var clear = function () {
     mealIngredientsCon.innerHTML = ""; 
