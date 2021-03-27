@@ -241,6 +241,12 @@ var getMusic = function(){
 
 }
  
+//onclick save to localstorage
+var saveStorage = function(){
+    localStorage.setItem(getRecipeData, JSON.stringify(getRecipeData));
+    console.log(saveStorage);
+}
+
 
 var clear = function () {
     mealIngredientsCon.innerHTML = ""; 
