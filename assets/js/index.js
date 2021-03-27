@@ -1,29 +1,13 @@
-var protien = document.querySelector(".protein-option");
+var protien = document.getElementById(".protein-option");
+var selectedProtein = protein.options[protein.selectedIndex].value;
 
 
 
 
-
-
-
-
-//fetch music
-fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=chicken", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "745e72bfb2mshcd1b1af9ded37c3p1ca71djsnfeb89c9db301",
-		"x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
-	}
-})
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(err => {
-	console.error(err);
-});
 
 // variable for music chosen
 window.onload=function(){    
-   fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=chicken" , {
+   fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + selectedProtein , {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "745e72bfb2mshcd1b1af9ded37c3p1ca71djsnfeb89c9db301",
