@@ -85,6 +85,7 @@ var randomizeHandler = function (event) {
                    
     } else {
         getRecipeData();
+        getMusic();
     }
     
     
@@ -207,9 +208,9 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
 }
 
 // variable for music chosen
-window.onload=function(){  
+var getMusic = function(){  
 
-    fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + protein , {
+    fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + protein, {
          "method": "GET",
          "headers": {
              "x-rapidapi-key": "745e72bfb2mshcd1b1af9ded37c3p1ca71djsnfeb89c9db301",
@@ -224,8 +225,8 @@ window.onload=function(){
      musicPlay.src = chosenMusic ;
  
      })
-     
-     }
+
+}
  
 
 var clear = function () {
