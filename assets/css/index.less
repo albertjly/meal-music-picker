@@ -1,41 +1,37 @@
+button{
+  outline: none;
+}
 
 /***************************** header - start *****************************/
 header{
-  background-color: #ffdf7e;
-  height: 80px;
-  //text-align: center;
-  h1{
-    //display: inline-block;
-    line-height: 80px;
-  }
-  button{
-    //float: right;
-    width: 100px;
-    height: 100%;
-    background-color: orange;
-    border-radius: 10px;
-    letter-spacing: 1px;
-    cursor: pointer;
+  .container{
+    .columns{
+      width: 90%;
+      margin: 0 auto;
+      height: 80px;
+      line-height: 80px;
+      //text-align: center;
+      h1{
+        background-color: #ffdf7e;
+      }
+      button{
+        //float: right;
+        //width: 100px;
+        height: 80px;
+        background-color: orange;
+        border-radius: 10px;
+        //letter-spacing: 1px;
+        cursor: pointer;
+      }
+    }
   }
 }
 /****************************** header - end ******************************/
 
 /***************************** nav - start *****************************/
 nav{
-  //padding: 20px;
-  //background-color: green;
-  //height: 50px;
-  //display: flex;
-  //align-items: center;
   ul{
-    //margin: 0 auto;
-    //display: flex;
-    //justify-content: space-between;
-    //width: 80%;
-    //height: 35px;
     li{
-      //float: left;
-      //width: 22%;
       background-color: #ffdf7e;
       border: 2px solid orange;
       border-radius: 8px;
@@ -46,11 +42,6 @@ nav{
           background-color: #ffdf7e;
         }
       }
-      //text-align: center;
-      a{
-        //display: block;
-        //line-height: 35px;
-      }
     }
   }
 }
@@ -59,23 +50,25 @@ nav{
 /***************************** meal - start *****************************/
 #meal{
   .container{
-    margin: 0 auto;
-    display: flex;
-    width: 80%;
-    height: 300px;
-    .meal-img{
-      flex: 2;
-      background-color: #ffdf7e;
-      margin-right: 20px;
-      border: 2px solid orange;
-      border-radius: 10px;
-    }
-    .meal-detail{
-      flex: 1;
-      text-align: center;
-      background-color: lemonchiffon;
-      border: 2px solid orange;
-      border-radius: 10px;
+    .columns{
+      margin: 0 auto;
+      //display: flex;
+      width: 90%;
+      height: 300px;
+      .meal-img{
+        //flex: 2;
+        background-color: #ffdf7e;
+        margin-right: 20px;
+        border: 2px solid orange;
+        border-radius: 10px;
+      }
+      .meal-detail{
+        //flex: 1;
+        text-align: center;
+        background-color: lemonchiffon;
+        border: 2px solid orange;
+        border-radius: 10px;
+      }
     }
   }
 }
@@ -83,18 +76,87 @@ nav{
 
 /***************************** protein - start *****************************/
 #protein{
-  background-color: blue;
+  //background-color: blue;
+  .container{
+    margin-top: 10px;
+    .columns{
+      margin: 0 auto;
+      width: 90%;
+      .diet-labels{
+        //background-color: red;
+        ul li{
+          margin: 0.3rem;
+          a{
+            background-color: lemonchiffon;
+            border: 2px solid orange;
+            border-radius: 5px;
+            display: block;
+            width: 100%;
+            &:hover{
+              span{
+                color: orangered;
+                font-weight: bolder;
+              }
+            }
+          }
+        }
+      }
+      .nutrition-facts{
+        background-color: #ffdf7e;
+        border-radius: 10px;
+      }
+    }
+  }
 }
 /****************************** protein - end ******************************/
 
 /***************************** health-tag - start *****************************/
 #health-tag{
-  background-color: yellow;
+  .container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .columns{
+      margin: 0 auto;
+      width: 90%;
+      .music{
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-color: #ffdf7e;
+        height: 200px;
+      }
+      .music-description{
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        background-color: orange;
+      }
+    }
+  }
 }
 /****************************** health-tag - end ******************************/
 
 /***************************** footer - start *****************************/
 footer{
-  background-color: grey;
+   .container{
+     .columns{
+     margin: 0 auto;
+       width: 90%;
+       background-color: #ffdf7e;
+       height: 60px;
+       //text-align: center;
+       h1{
+         line-height: 60px;
+         background-color: #ffdf7e;
+       }
+       button{
+         //float: right;
+         //width: 100px;
+         height: 60px;
+         background-color: orange;
+         border-radius: 10px;
+         //letter-spacing: 1px;
+         cursor: pointer;
+       }
+     }
+   }
 }
 /****************************** footer - end ******************************/

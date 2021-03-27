@@ -11,12 +11,18 @@
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
-    <header class="container">
-        <h1 class="title is-1">Healthy Meal</h1>
-<!--        <button>Jump to Recipe Box</button>-->
+    <header>
+        <div class="container">
+            <div class="columns is-gapless is-justify-content-space-between">
+                <h1 class="title is-1 column is-10">Healthy Meal</h1>
+                <button class="column is-2"><h2 class="title is-5">Jump to Recipe Box</h2></button>
+            </div></div>
     </header>
 
+<<<<<<< HEAD
     <!-- list  -->
+=======
+>>>>>>> main
     <nav class="container is-justify-content-center">
         <ul class="columns is-justify-content-center is-gapless is-variable">
             <li class="dropdown is-hoverable column is-one-fifth m-2" id="mealType">
@@ -45,7 +51,11 @@
                     </div>
                 </div>
             </li>
+<<<<<<< HEAD
             <li class="dropdown is-hoverable column is-one-fifth m-2">
+=======
+            <li class="dropdown column is-one-fifth m-2">
+>>>>>>> main
                 <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
                         <span id="protien-input">Protein</span>
@@ -68,19 +78,32 @@
                         <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Fish")'>
                             Fish
                         </a>
+<<<<<<< HEAD
                         <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Turkey")'>
                            Turkey
                         </a>
                         <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Vegetarian")'>
                             Vegetarian
                          </a>
+=======
+                        <a href="#" class="dropdown-item">
+                            Turkey
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Randomize
+                        </a>
+>>>>>>> main
                     </div>
                 </div>
             </li>
             <li class="dropdown is-hoverable column is-one-fifth m-2">
                 <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+<<<<<<< HEAD
                         <span id="health-input">Health Tags</span>
+=======
+                        <span>Health Tag</span>
+>>>>>>> main
                         <span class="icon is-small ml-5">
                             <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
                         </span>
@@ -88,6 +111,7 @@
                 </div>
                 <div class="dropdown-menu" id="dropdown-menu3" role="menu">
                     <div class="dropdown-content">
+<<<<<<< HEAD
                         <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Alcohol-free")'>
                             Alcohol-free
                         </a>
@@ -115,6 +139,35 @@
                         <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Soy")'>
                             Soy
                         </a>
+=======
+                        <a href="#" class="dropdown-item">
+                            Alcohol-free
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Diary-free
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Shellfish-free
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Gluten-free
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Pork-free
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Peanut-free
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Vegan
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Vegetarian
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Soy
+                        </a>
+>>>>>>> main
                     </div>
                 </div>
             </li>
@@ -125,6 +178,7 @@
             </li>
         </ul>
     </nav>
+<<<<<<< HEAD
     <!-- meal section start  -->
     <section id="meal">
         <div class="container">
@@ -152,6 +206,60 @@
         </div>
     </section>
     <!-- nutrition section end  -->
+=======
+
+    <section id="meal">
+        <div class="container">
+            <div class="columns">
+                <div class="meal-img column is-8"></div>
+                <div class="meal-detail column is-4">
+                    <h1 class="meal-title title is-3">meal-title</h1>
+                    <div class="meal-ingredients">meal-ingredient</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="protein">
+        <div class="container">
+            <div class="columns is-justify-content-center">
+                <div class="diet-labels column is-2 p-0">
+                    <ul>
+                        <li><a href="#"><span class="title is-6">Calories</span></a></li>
+                        <li><a href="#"><span class="title is-6">Cholesterol</span></a></li>
+                        <li><a href="#"><span class="title is-6">Carbs</span></a></li>
+                        <li><a href="#"><span class="title is-6">Sodium</span></a></li>
+                        <li><a href="#"><span class="title is-6">Fat</span></a></li>
+                        <li><a href="#"><span class="title is-6">Sugar</span></a></li>
+                    </ul>
+                </div>
+                <div class="nutrition-facts column is-10 m-0">
+                    <p>
+                        Nutrition Facts (fetch from api)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="health-tag">
+        <div class="container">
+            <div class="columns is-flex-direction-column">
+                <div class="music column is-12">1</div>
+                <div class="music-description column is-12">2</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="columns is-gapless is-justify-content-space-between">
+                <h1 class="title is-1 column is-10">Healthy Meal</h1>
+                <button class="column is-2"><h2 class="title is-5">Save to Recipe Box</h2></button>
+            </div>
+        </div>
+    </footer>
+>>>>>>> main
 
     <!-- nutrition section start  -->
     <section id="music">
@@ -162,6 +270,18 @@
     <footer>footer</footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<<<<<<< HEAD
+=======
+    <script>
+        var dropDown = $('li.dropdown');
+        for (var i = 0; i < dropDown.length; i++) {
+            dropDown[i].onclick = function(event) {
+                event.stopPropagation();
+                $(this).classList.toggle('is-active');
+            };
+        }
+    </script>
+>>>>>>> main
     <script src="./assets/js/index.js"></script>
 </body>
 </html>
