@@ -1,7 +1,6 @@
 
 //DOM Elements 
 var randomButton = document.querySelector(".btn-random");
-
 var mealImageCon = document.querySelector(".meal-img");
 var mealTitleCon = document.querySelector(".meal-title");
 var mealYieldCon = document.querySelector(".yield");
