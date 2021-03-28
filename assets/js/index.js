@@ -9,7 +9,7 @@ var mealIngredientsCon = document.querySelector(".meal-ingredients");
 var dietLabelCon = document.querySelector(".diet-details");
 var nutritionInfoCon = document.querySelector(".nutrition-facts")
 var recipeBoxButton = document.querySelector(".box");
-var recipeCon = document.querySelector(".recipes-box");
+var recipeCon = document.querySelector(".recipes-box"); 
 
 //Recipies Key/ID
 var app_key = "bfff307b245dc8b98d49e452f8586302";
@@ -239,18 +239,7 @@ var saveStorage = function(){
       //console.log(title);
      localStorage.setItem(title, JSON.stringify(title));
      
-    var storedRecipe = {title: title};
-
-
-    recipeSave = function(){
-       var getStore =  JSON.parse(localStorage.getItem('title')) || [] ;
-       
-    
-       localStorage.setItem('getStore', JSON.stringify(getStore));
-       console.log(storedRecipe);
-    }
-    
-    recipeSave();
+   
 }   
 
 
