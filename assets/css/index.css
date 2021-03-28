@@ -18,47 +18,49 @@ header .container .columns button {
   cursor: pointer;
 }
 /****************************** header - end ******************************/
-
 /***************************** nav - start *****************************/
 nav ul li {
-  background-color: #ffdf7e;
   border: 2px solid orange;
   border-radius: 8px;
 }
-nav ul li .dropdown-trigger button {
+nav ul li .button {
+  font-weight: bolder;
+  background-color: #ffdf7e;
   width: 100%;
   height: 100%;
-  background-color: #ffdf7e;
 }
 /****************************** nav - end ******************************/
-
 /***************************** meal - start *****************************/
 #meal .container .columns {
   margin: 0 auto;
   width: 90%;
-  height: 300px;
-  margin-top: 20px;
+  max-height: 360px;
 }
-
 #meal .container .columns .meal-img {
   background-color: #ffdf7e;
-  margin-right: 20px;
   border: 2px solid orange;
   border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#meal .container .columns .meal-img img {
+  width: 100%;
+  vertical-align: center;
 }
 #meal .container .columns .meal-detail {
   text-align: center;
   background-color: lemonchiffon;
   border: 2px solid orange;
   border-radius: 10px;
+  overflow: auto;
 }
 /****************************** meal - end ******************************/
-
 /***************************** nutrition - start *****************************/
 #nutrition .container {
   margin-top: 10px;
 }
-
 #nutrition .container .columns {
   margin: 0 auto;
   width: 90%;
@@ -77,46 +79,40 @@ nav ul li .dropdown-trigger button {
   color: orangered;
   font-weight: bolder;
 }
-#nutrition .container .columns .nutrition-facts {
+#nutrition .container .columns .nutrition-details {
   background-color: #ffdf7e;
   border-radius: 10px;
->>>>>>> main
 }
 /****************************** nutrition - end ******************************/
-
 /***************************** health-tag - start *****************************/
-#music-container .container {
+#health-tag .container {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-#music-container .container .columns {
+#health-tag .container .columns {
   margin: 0 auto;
   width: 90%;
 }
-#music-container .container .columns .music {
+#health-tag .container .columns .music {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: #ffdf7e;
   height: 200px;
 }
-#music-container .container .columns .music-description {
+#health-tag .container .columns .music-description {
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   background-color: orange;
 }
 /****************************** health-tag - end ******************************/
-
-/****************************** modal - start ******************************/
 .modal-content {
-background-color: #fff;
-border-radius: 6px;
-box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
-color: #4a4a4a;
-display: block;
-padding: 1.25rem;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 1%), 0 0 0 1px rgb(10 10 5%);
+  color: #4a4a4a;
+  display: block;
+  padding: 1.25rem;
 }
-/****************************** modal - end ******************************/
-
 /***************************** footer - start *****************************/
 footer .container .columns {
   margin: 0 auto;
