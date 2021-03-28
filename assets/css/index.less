@@ -47,11 +47,12 @@ nav{
 
 /***************************** meal - start *****************************/
 #meal{
+  display: none;
   .container{
     .columns{
       margin: 0 auto;
       width: 90%;
-        max-height: 360px;
+        max-height: 330px;
       .meal-img{
         background-color: #ffdf7e;
         border: 2px solid orange;
@@ -85,25 +86,14 @@ nav{
       margin: 0 auto;
       width: 90%;
       .diet-labels{
-        ul li{
-          margin: 0.3rem;
-          a{
-            background-color: lemonchiffon;
-            border: 2px solid orange;
-            border-radius: 5px;
-            display: block;
-            width: 100%;
-            &:hover{
-              span{
-                color: orangered;
-                font-weight: bolder;
-              }
-            }
-          }
-        }
-      }
-      .nutrition-details{
         background-color: #ffdf7e;
+        border: 2px solid orange;
+        border-radius: 10px;
+      }
+      .nutrition-facts{
+        min-height: 170px;
+        background-color: #ffdf7e;
+        border: 2px solid orange;
         border-radius: 10px;
       }
     }
@@ -112,7 +102,7 @@ nav{
 /****************************** nutrition - end ******************************/
 
 /***************************** health-tag - start *****************************/
-#health-tag{
+#music-container{
   .container{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -135,15 +125,6 @@ nav{
 }
 /****************************** health-tag - end ******************************/
 
-.modal-content {
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
-  color: #4a4a4a;
-  display: block;
-  padding: 1.25rem;
-}
-
 /***************************** footer - start *****************************/
 footer{
    .container{
@@ -152,18 +133,14 @@ footer{
        width: 90%;
        background-color: #ffdf7e;
        height: 60px;
-       //text-align: center;
        h1{
          line-height: 60px;
          background-color: #ffdf7e;
        }
        button{
-         //float: right;
-         //width: 100px;
          height: 60px;
          background-color: orange;
          border-radius: 10px;
-         //letter-spacing: 1px;
          cursor: pointer;
        }
      }

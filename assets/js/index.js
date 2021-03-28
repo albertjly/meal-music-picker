@@ -7,7 +7,7 @@ var mealTitleCon = document.querySelector(".meal-title");
 var mealYieldCon = document.querySelector(".yield");
 var mealIngredientsCon = document.querySelector(".meal-ingredients");
 var dietLabelCon = document.querySelector(".diet-details");
-var nutritionInfoCon = document.querySelector(".nutrition-facts")
+var nutritionInfoCon = document.querySelector(".nutrition-facts");
 var recipeBoxButton = document.querySelector(".box");
 
 //Recipies Key/ID
@@ -30,16 +30,16 @@ var updateMealDropDown = function(dropDownSelection) {
     mealType = dropDownSelection;
 
 
-}
+};
 var updateProteinDropDown = function(dropDownSelection) {
     //alert(i);
     document.getElementById("protien-input").innerHTML = dropDownSelection ; 
     protein = dropDownSelection;
-}
+};
 var updateHealthDropDown = function(dropDownSelection) {
     document.getElementById("health-input").innerHTML = dropDownSelection ; 
     health = dropDownSelection;
-}
+};
 
 
 
@@ -56,12 +56,12 @@ var randomizeHandler = function (event) {
        var modalBack = document.createElement("div");
        modalBack.setAttribute("class", "modal-background");
        var modalContent = document.createElement("div");
-       modalContent.setAttribute("class", "modal-content is-clipped")
+       modalContent.setAttribute("class", "modal-content is-clipped");
        modalContent.innerHTML =  "Please pick a meal type, protein, and health tag!";
        var modalButton = document.createElement("button");
        modalButton.setAttribute("class", "modal-close is-large");
        modalButton.setAttribute("aria-label", "close");
-       modalButton.setAttribute("type", "submit")
+       modalButton.setAttribute("type", "submit");
 
        modal.append(modalBack,modalContent,modalButton);
        $("body").append(modal);
@@ -88,13 +88,13 @@ var randomizeHandler = function (event) {
     }
     
     
-}
+};
 
 //fetch meal information 
 var getRecipeData = function () {
     var mealUrl = "https://api.edamam.com/search?q=" + protein + "&app_id=" + app_id + "&app_key="+ app_key; + "&mealType=" + mealType + "&health=" + health;
     
-    var recipe 
+    var recipe;
         fetch(mealUrl)
             .then(function(response){
                 if (response.ok) {
@@ -147,6 +147,7 @@ var getRecipeData = function () {
 
 // display recipe inforamtion
 var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutritionInfo) {
+    $('#meal').css('display', 'block');
     clear();
 
     //add meal img to bpage 
@@ -156,7 +157,7 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     
     // add meal title 
     var mealTitle = document.createElement("h1");
-    mealTitle.setAttribute("class", "title is-3")
+    mealTitle.setAttribute("class", "title is-3");
     mealTitle.innerHTML = title;
     mealTitleCon.append(mealTitle);
 
@@ -168,7 +169,7 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     //add indirgent to page ARRAY
     for (var i = 0; i<ingridents.length; i++) {
         var mealIngr = document.createElement("li");
-        mealIngr.setAttribute("class", "is-lower-alpha")
+        mealIngr.setAttribute("class", "is-lower-alpha");
         mealIngr.innerHTML = ingridents[i];
         mealIngr.setAttribute('is-flex-direction-row','flex-direction: row');
         //mealIngr.style.display = "flex flex-column";
@@ -177,7 +178,7 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     // add diet labels to page ARRAY
     if (dietLabels.length === 0) {
         var dietLabelEl = document.createElement("span");
-        dietLabelEl.innerHTML = "No diet labels exsits"
+        dietLabelEl.innerHTML = "No diet labels exsits";
          dietLabelCon.append(dietLabelEl);
 
     } else {
@@ -185,11 +186,11 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
             var dietLabelEl = document.createElement("span");
             dietLabelEl.setAttribute("class", "tag is-large is-light");
             dietLabelEl.setAttribute('is-flex-direction-column','flex-direction: column');
-            dietLabelEl.setAttribute('is-justify-align-center', 'justify-align: center')
-            dietLabelEl.setAttribute('is-flex-wrap-wrap', 'flex-wrap: wrap')
+            dietLabelEl.setAttribute('is-justify-align-center', 'justify-align: center');
+            dietLabelEl.setAttribute('is-flex-wrap-wrap', 'flex-wrap: wrap');
     
            
-            dietLabelEl.innerHTML = dietLabels[i]
+            dietLabelEl.innerHTML = dietLabels[i];
         
             //dietLabelEl.innerHTML = dietLabels[i];
             dietLabelCon.append(dietLabelEl);
@@ -204,7 +205,7 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     }
 
 
-}
+};
 
 var clear = function () {
     mealIngredientsCon.innerHTML = ""; 
@@ -214,8 +215,8 @@ var clear = function () {
     dietLabelCon.innerHTML = "";
     nutritionInfoCon.innerHTML = "";
 
-}
+};
 
 
 //event listeners for search click
-randomButton.addEventListener("click", randomizeHandler)
+randomButton.addEventListener("click", randomizeHandler);
