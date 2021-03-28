@@ -255,7 +255,7 @@ var clear = function () {
     mealImageCon.innerHTML = ""; 
     dietLabelCon.innerHTML = "";
     nutritionInfoCon.innerHTML = "";
-
+    musicTitleCon.innerHTML = "";
 }
 
 
