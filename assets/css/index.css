@@ -7,23 +7,37 @@ header .container .columns {
   margin: 0 auto;
   height: 80px;
   line-height: 80px;
-}
-header .container .columns h1 {
-  background-color: #ffdf7e;
+  background: #ffdf7e;
+  background: linear-gradient(90deg, #ffdf7e 0%, #ffdf7e 50%, #ffa500 100%);
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 header .container .columns button {
   height: 80px;
-  background-color: orange;
+  background-color: transparent;
   border-radius: 10px;
   cursor: pointer;
+  border: 2px solid #ffdf7e;
+}
+header .container .columns button:hover {
+  box-shadow: 2px 2px 2px #ffdf7e;
+}
+header .container .columns button:hover .title {
+  color: #d2692e;
+  text-shadow: 2px 2px 2px #ffdf7e;
+}
+header .container .columns button .title {
+  color: #ffdf7e;
+  width: 100%;
+  text-shadow: 2px 2px 2px rgba(210, 105, 46, 0.5);
 }
 /****************************** header - end ******************************/
 /***************************** nav - start *****************************/
-nav ul li {
+nav .container ul li {
   border: 2px solid orange;
   border-radius: 8px;
 }
-nav ul li .button {
+nav .container ul li .button {
   font-weight: bolder;
   background-color: #ffdf7e;
   width: 100%;
@@ -31,13 +45,10 @@ nav ul li .button {
 }
 /****************************** nav - end ******************************/
 /***************************** meal - start *****************************/
-#meal {
-  display: none;
-}
 #meal .container .columns {
   margin: 0 auto;
   width: 90%;
-  max-height: 330px;
+  max-height: 300px;
 }
 #meal .container .columns .meal-img {
   background-color: #ffdf7e;
@@ -53,67 +64,104 @@ nav ul li .button {
   vertical-align: center;
 }
 #meal .container .columns .meal-detail {
-  text-align: center;
   background-color: lemonchiffon;
   border: 2px solid orange;
   border-radius: 10px;
-  overflow: auto;
+}
+#meal .container .columns .meal-detail .meal-title {
+  display: inline-block;
+}
+#meal .container .columns .meal-detail .yield {
+  float: right;
+  color: chocolate;
+}
+#meal .container .columns .meal-detail .meal-ingredients {
+  width: 100%;
+  max-height: 90%;
+}
+#meal .container .columns .meal-detail .meal-ingredients li {
+  margin-bottom: 4px;
 }
 /****************************** meal - end ******************************/
-/***************************** nutrition - start *****************************/
-#nutrition .container {
+/***************************** nutrition-music - start *****************************/
+#nutrition-music .container {
   margin-top: 10px;
 }
-#nutrition .container .columns {
+#nutrition-music .container .columns {
   margin: 0 auto;
   width: 90%;
 }
-#nutrition .container .columns .diet-labels {
+#nutrition-music .container .columns .diet-labels {
   background-color: #ffdf7e;
   border: 2px solid orange;
   border-radius: 10px;
 }
-#nutrition .container .columns .nutrition-facts {
+#nutrition-music .container .columns .diet-labels .diet-details span {
+  background-color: lemonchiffon;
+  border: 2px solid orange;
+  border-radius: 10px;
+  margin-bottom: 3px;
+}
+#nutrition-music .container .columns .nutrition-facts {
   min-height: 170px;
   background-color: #ffdf7e;
   border: 2px solid orange;
   border-radius: 10px;
 }
-/****************************** nutrition - end ******************************/
-/***************************** health-tag - start *****************************/
-#music-container .container {
-  margin-top: 10px;
-  margin-bottom: 10px;
+#nutrition-music .container .columns .nutrition-facts li {
+  font-size: large;
 }
-#music-container .container .columns {
-  margin: 0 auto;
-  width: 90%;
+#nutrition-music .container .columns .nutrition-facts li:hover,
+#nutrition-music .container .columns .nutrition-facts li strong:hover {
+  color: chocolate;
 }
-#music-container .container .columns .music {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+#nutrition-music .container .columns .music {
   background-color: #ffdf7e;
-  height: 200px;
+  border: 2px solid orange;
+  border-radius: 10px;
 }
-#music-container .container .columns .music-description {
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  background-color: orange;
+#nutrition-music .container .columns .music audio {
+  width: 100%;
 }
+/****************************** nutrition-music - end ******************************/
+/***************************** health-tag - start *****************************/
+/*#music-container{
+  .container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .columns{
+      margin: 0 auto;
+      width: 90%;
+      .music{
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-color: #ffdf7e;
+        height: 200px;
+      }
+      .music-description{
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        background-color: orange;
+      }
+    }
+  }
+}*/
 /****************************** health-tag - end ******************************/
 /***************************** footer - start *****************************/
 footer .container .columns {
   margin: 0 auto;
   width: 90%;
   background-color: #ffdf7e;
-  height: 60px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 70px;
 }
 footer .container .columns h1 {
   line-height: 60px;
   background-color: #ffdf7e;
 }
 footer .container .columns button {
-  height: 60px;
+  height: 70px;
   background-color: orange;
   border-radius: 10px;
   cursor: pointer;
