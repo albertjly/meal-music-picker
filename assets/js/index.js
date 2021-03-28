@@ -9,6 +9,7 @@ var mealIngredientsCon = document.querySelector(".meal-ingredients");
 var dietLabelCon = document.querySelector(".diet-details");
 var nutritionInfoCon = document.querySelector(".nutrition-facts")
 var recipeBoxButton = document.querySelector(".box");
+var recipeCon = document.querySelector(".recipes-box"); 
 
 //Recipies Key/ID
 var app_key = "3a6631ade0c97e6a097cc13ba9e1ff33";
@@ -89,7 +90,7 @@ var getRecipeData = function () {
             .then(function(response){
                 if (response.ok) {
                     response.json().then(function (data) {
-                        console.log(data);
+                       // console.log(data);
                       
                         //random
                         function getRandomInt() {
@@ -232,10 +233,17 @@ var getMusic = function(){
 }
 
   //onclick save to localstorage
-  var saveStorage = function(){
+ 
+
+    //recipeCon.append(storedRecipe);
+    
+
+var saveStorage = function(){
       //console.log(title);
      localStorage.setItem(title, JSON.stringify(title));
-}
+     
+   
+}   
 
 
 
