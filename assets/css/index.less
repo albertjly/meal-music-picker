@@ -52,6 +52,7 @@ nav{
       li{
         border: 2px solid @orange;
         border-radius: 8px;
+        width: 100%;
         .button{
           font-weight: bolder;
           background-color: @lemonYellow;
@@ -61,12 +62,15 @@ nav{
             color: @chocolateBrown;
           }
         }
-        .dropdown-menu .dropdown-content{
+        .dropdown-menu{
           width: 100%;
-          background-color: @lemonChiffon;
-          .dropdown-item{
-            &:hover{
-              background-color: @lemonYellow;
+          .dropdown-content{
+            width: 100%;
+            background-color: @lemonChiffon;
+            .dropdown-item{
+              &:hover{
+                background-color: @lemonYellow;
+              }
             }
           }
         }
@@ -83,8 +87,8 @@ nav{
     .columns{
       margin: 0 auto;
       width: 90%;
-      max-height: 300px;
       .meal-img{
+      max-height: 320px;
         background-color: @lemonYellow;
         border: 2px solid @orange;
         border-radius: 10px;
@@ -98,6 +102,7 @@ nav{
         }
       }
       .meal-detail{
+        max-height: 320px;
         background-color: @lemonChiffon;
         border: 2px solid @orange;
         border-radius: 10px;

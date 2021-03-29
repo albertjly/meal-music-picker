@@ -52,7 +52,7 @@ var randomizeHandler = function (event) {
        //alert("Please pick a meal type, protein, and health tag!")
        
        var modal = document.createElement("div");
-       modal.setAttribute("class", "modal is-active");
+       modal.setAttribute("class", "modal is-active is-mobile");
        var modalBack = document.createElement("div");
        modalBack.setAttribute("class", "modal-background");
        var modalContent = document.createElement("div");

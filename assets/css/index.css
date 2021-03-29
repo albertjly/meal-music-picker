@@ -38,6 +38,7 @@ header .container .columns button .title {
 nav .container ul li {
   border: 2px solid #ffa500;
   border-radius: 8px;
+  width: 100%;
 }
 nav .container ul li .button {
   font-weight: bolder;
@@ -47,6 +48,9 @@ nav .container ul li .button {
 }
 nav .container ul li .button span {
   color: #d2692e;
+}
+nav .container ul li .dropdown-menu {
+  width: 100%;
 }
 nav .container ul li .dropdown-menu .dropdown-content {
   width: 100%;
@@ -60,9 +64,9 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
 #meal .container .columns {
   margin: 0 auto;
   width: 90%;
-  max-height: 300px;
 }
 #meal .container .columns .meal-img {
+  max-height: 320px;
   background-color: #ffdf7e;
   border: 2px solid #ffa500;
   border-radius: 10px;
@@ -76,6 +80,7 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
   vertical-align: center;
 }
 #meal .container .columns .meal-detail {
+  max-height: 320px;
   background-color: #fffacd;
   border: 2px solid #ffa500;
   border-radius: 10px;
