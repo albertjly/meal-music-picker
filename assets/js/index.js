@@ -9,6 +9,7 @@ var dietLabelCon = document.querySelector(".diet-details");
 var nutritionInfoCon = document.querySelector(".nutrition-facts");
 var recipeBoxButton = document.querySelector(".box");
 var recipeCon = document.querySelector(".recipes-box"); 
+var musicTitleCon = document.querySelector(".music-title");
 
 //Recipies Key/ID
 var app_key = "3a6631ade0c97e6a097cc13ba9e1ff33";
@@ -20,6 +21,7 @@ var app_id = "49d9431a";
 var mealType = '';
 var protein = '';
 var health= '';
+var title;
 
 
 
@@ -28,9 +30,6 @@ var updateMealDropDown = function(dropDownSelection) {
     //alert(i);
     document.getElementById("meal-input").innerHTML = dropDownSelection ; 
     mealType = dropDownSelection;
-    console.log(mealType);
-
-
 };
 var updateProteinDropDown = function(dropDownSelection) {
     //alert(i);
@@ -79,8 +78,6 @@ var randomizeHandler = function (event) {
 };
 
 
-}
-var title;
 //fetch meal information 
 var getRecipeData = function () {
 
@@ -148,6 +145,7 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     //add meal img to bpage 
     var mealImg = document.createElement("img");
     mealImg.setAttribute("src", img);
+    mealImg.setAttribute("class", "p-0")
     mealImageCon.append(mealImg);
     
     // add meal title 
@@ -193,6 +191,10 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     }    
     
     //add nutrion info to page 
+    var nutritionTitle =document.createElement("div");
+    nutritionTitle.setAttribute("class", "diet-title title is-5 mb-2");
+    nutritionTitle.innerHTML = "Nutrition Facts:"
+    nutritionInfoCon.append(nutritionTitle);
     for (var i = 0; i<nutritionInfo.length; i++) {
         var nutrition = document.createElement("li");
         nutrition.innerHTML = nutritionInfo[i];
@@ -202,8 +204,7 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
 
 };
 
-// variable for music chosen
-var musicTitleCon = document.querySelector(".music-title");
+//fetch music 
 var getMusic = function(){  
 
     fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + protein, {
@@ -229,25 +230,18 @@ var getMusic = function(){
      musicPlay.src = chosenMusic ;
     
      var songHeader = document.createElement('h1');
-     songHeader.setAttribute('class', 'title is-3');
+     songHeader.setAttribute('class', 'subtitle is-4 is-size-4-mobile is-size-4-desktop is-size-3-tablet');
      songHeader.innerHTML = songTitle;
-     musicTitleCon.append(songTitle);
+     musicTitleCon.append(songHeader);
      musicTitleCon.append(songArtist);
      })
 
 }
 
-  //onclick save to localstorage
- 
-
-    //recipeCon.append(storedRecipe);
     
 
 var saveStorage = function(){
-      //console.log(title);
-     localStorage.setItem(title, JSON.stringify(title));
-     
-   
+     localStorage.setItem(title, JSON.stringify(title))   
 }   
 
 
@@ -259,10 +253,10 @@ var clear = function () {
     mealImageCon.innerHTML = ""; 
     dietLabelCon.innerHTML = "";
     nutritionInfoCon.innerHTML = "";
+    musicTitleCon.innerHTML = "";
 
 };
 
 //event listeners for search click
-
 randomButton.addEventListener("click", randomizeHandler);
 
