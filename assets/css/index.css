@@ -74,6 +74,7 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 #meal .container .columns .meal-img img {
   width: 100%;
@@ -98,7 +99,7 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
 }
 #meal .container .columns .meal-detail .meal-ingredients {
   width: 100%;
-  max-height: 90%;
+  max-height: 85%;
 }
 #meal .container .columns .meal-detail .meal-ingredients li {
   margin-bottom: 4px;
@@ -137,6 +138,9 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
   background-color: #ffdf7e;
   border: 2px solid #ffa500;
   border-radius: 10px;
+}
+#nutrition-music .container .columns .nutrition-facts .nutrition-title {
+  color: #d2692e;
 }
 #nutrition-music .container .columns .nutrition-facts li {
   font-size: large;
