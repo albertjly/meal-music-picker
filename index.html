@@ -13,13 +13,16 @@
 <body>
     <header>
         <div class="container">
-            <div class="columns is-gapless is-justify-content-space-between">
-                <h1 class="title is-1 column is-10">Healthy Meal</h1>
-                <button class="column is-2">
-                    <p class="title is-6 column m-0 p-1">Jump to</p>
-                    <p class="title is-6 column m-0 p-1">Recipe Box</p>
+            <div class="columns is-justify-content-space-between is-align-content-center">
+                <h1 class="title is-1 column is-10 pl-4 m-0">Healthy Meal</h1>
+                <button class="column is-2 p-0">
+                    <p class="title is-5 column m-0 p-1">Jump to</p>
+                    <p class="title is-5 column m-0 p-1">Recipe Box</p>
                 </button>
+            </div>
+        </div>
     </header>
+
     <!-- list  -->
     <nav>
         <div class="container is-justify-content-center">
@@ -29,8 +32,8 @@
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
                             <span id="meal-input">Meal Type</span>
-                            <span class="icon is-small ml-5">
-                            <i class="fas fa-angle-down ml-5" aria-hidden="true"></i>
+                            <span class="icon is-small ml-4">
+                            <i class="fas fa-angle-down ml-4" aria-hidden="true"></i>
                         </span>
                         </button>
                     </div>
@@ -57,8 +60,8 @@
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
                             <span id="protien-input">Protein</span>
-                            <span class="icon is-small ml-5">
-                            <i class="fas fa-angle-down ml-5" aria-hidden="true"></i>
+                            <span class="icon is-small ml-4">
+                            <i class="fas fa-angle-down ml-4" aria-hidden="true"></i>
                         </span>
                         </button>
                     </div>
@@ -90,8 +93,8 @@
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
                             <span id="health-input">Health Tags</span>
-                            <span class="icon is-small ml-5">
-                            <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
+                            <span class="icon is-small ml-4">
+                            <i class="fas fa-angle-down ml-4" aria-hidden="false"></i>
                         </span>
                         </button>
                     </div>
@@ -139,9 +142,13 @@
     <section id="meal">
         <div class="container">
             <div class="columns is-justify-content-center">
-                <div class="meal-img column is-4 p-0"><img src="https://www.edamam.com/web-img/2ca/2ca946a40338e9b93c1d14dec518e1b8.jpg"></div>
+                <div class="meal-img column is-4 p-0">
+                    <img src="https://www.edamam.com/web-img/2ca/2ca946a40338e9b93c1d14dec518e1b8.jpg">
+                </div>
                 <div class="meal-detail column is-8 ml-2">
-                    <div class="meal-title title is-3 mb-2"><h1 class="title is-3">Chicken cacciatore</h1></div>
+                    <div class="meal-title title is-3 mb-2">
+                        <h1 class="title is-3">Chicken cacciatore</h1>
+                    </div>
                     <div class="yield title is-4 mr-5"><p>Yield: 6</p></div>
                     <ul class="meal-ingredients columns is-gapless ml-0 mr-0 is-flex-direction-column is-flex-wrap-wrap">
                         <li class="is-lower-alpha column is-6" is-flex-direction-row="flex-direction: row">8 tbsp olive oil</li>
@@ -170,7 +177,7 @@
         <div class="container">
             <div class="columns is-justify-content-space-between">
                 <div class="diet-labels column is-3">
-                    <div class="diet-title title is-5 mb-2">Diet Labels</div>
+                    <div class="diet-title title is-5 mb-2">Diet Labels:</div>
                     <div class="diet-details">
                         <span class="tag is-large" is-flex-direction-column="flex-direction: column" is-justify-align-center="justify-align: center" is-flex-wrap-wrap="flex-wrap: wrap">High-Protein</span>
                         <span class="tag is-large" is-flex-direction-column="flex-direction: column" is-justify-align-center="justify-align: center" is-flex-wrap-wrap="flex-wrap: wrap">Low-Fat</span>
@@ -195,24 +202,15 @@
     </section>
      <!-- nutrition section end  -->
 
-    <!--<section id="music-container">
-        <div class="container">
-            <div class="columns is-flex-direction-column">
-                <div class="music column is-12">
-                    <figure>
-                        <figcaption>A Song Based on Your Meal Preferences:</figcaption>
-                            <audio id="audio" controls></audio>
-                    </figure>
-                </div>
-                <div class="music-description column is-12">2</div>
-            </div>
-        </div>
-    </section>-->
     <footer class="mt-2">
         <div class="container">
-            <div class="columns is-gapless is-justify-content-space-between">
-                <h1 class="title is-1 column is-10">Healthy Meal</h1>
-                <button class="column is-2"><h2 class="title is-5">Save to Recipe Box</h2></button>
+            <div class="columns is-justify-content-space-between is-align-content-center">
+                <h1 class="title is-3 column is-5 pl-4 m-0 is-italic">Meal and music on us</h1>
+                <h1 class="title is-3 column is-5 m-0 is-italic is-flex-grow-1">Please enjoy the process</h1>
+                <button class="column is-2 p-0">
+                    <p class="title is-6 column m-0 p-1">Save to</p>
+                    <p class="title is-6 column m-0 p-1">Recipe Box</p>
+                </button>
             </div>
         </div>
     </footer>

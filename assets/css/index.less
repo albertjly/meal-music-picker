@@ -2,6 +2,11 @@ button{
   outline: none;
 }
 
+@chocolateBrown: rgba(210,105,46,1);
+@orange: rgba(255,165,0,1);
+@lemonYellow: rgba(255,223,126,1);
+@lemonChiffon: rgba(255,250,205,1);
+
 /***************************** header - start *****************************/
 header{
   .container{
@@ -9,29 +14,28 @@ header{
       width: 90%;
       margin: 0 auto;
       height: 80px;
-      line-height: 80px;
-      //text-align: center;
       background: rgb(255,223,126);
-      background: linear-gradient(90deg, rgba(255,223,126,1) 0%, rgba(255,223,126,1) 50%, rgba(255,165,0,1) 100%);
-      border-bottom-right-radius: 10px;
-      border-top-right-radius: 10px;
+      background: linear-gradient(90deg, rgba(255,223,126,1) 0%, rgba(255,223,126,1) 60%, rgba(255,165,0,1) 100%);
+      border-radius: 10px;
       h1{
+        color: @chocolateBrown;
+        text-shadow: 2px 2px 5px rgba(210,105,46,.5);
       }
       button{
         height: 80px;
         background-color: transparent;
         border-radius: 10px;
         cursor: pointer;
-        border: 2px solid rgba(255,223,126,1);
+        border: 2px solid @lemonYellow;
         &:hover{
-          box-shadow: 2px 2px 2px rgba(255,223,126,1);
+          box-shadow: 2px 2px 2px @lemonYellow;
           .title{
             color: rgba(210,105,46,1);
-            text-shadow: 2px 2px 2px rgba(255,223,126,1);
+            text-shadow: 2px 2px 2px @lemonYellow;
           }
         }
         .title{
-          color: rgba(255,223,126,1);
+          color: @lemonYellow;
           width: 100%;
           text-shadow: 2px 2px 2px rgba(210,105,46,.5);
         }
@@ -46,13 +50,25 @@ nav{
   .container{
     ul{
       li{
-        border: 2px solid orange;
+        border: 2px solid @orange;
         border-radius: 8px;
         .button{
           font-weight: bolder;
-          background-color: #ffdf7e;
+          background-color: @lemonYellow;
           width: 100%;
           height: 100%;
+          span{
+            color: @chocolateBrown;
+          }
+        }
+        .dropdown-menu .dropdown-content{
+          width: 100%;
+          background-color: @lemonChiffon;
+          .dropdown-item{
+            &:hover{
+              background-color: @lemonYellow;
+            }
+          }
         }
       }
     }
@@ -67,10 +83,10 @@ nav{
     .columns{
       margin: 0 auto;
       width: 90%;
-        max-height: 300px;
+      max-height: 300px;
       .meal-img{
-        background-color: #ffdf7e;
-        border: 2px solid orange;
+        background-color: @lemonYellow;
+        border: 2px solid @orange;
         border-radius: 10px;
         overflow: hidden;
         display: flex;
@@ -82,23 +98,29 @@ nav{
         }
       }
       .meal-detail{
-        //text-align: center;
-        background-color: lemonchiffon;
-        border: 2px solid orange;
+        background-color: @lemonChiffon;
+        border: 2px solid @orange;
         border-radius: 10px;
-        //overflow: auto;
         .meal-title{
           display: inline-block;
+          h1{
+            color: @chocolateBrown;
+            text-shadow: 1px 1px 1px @chocolateBrown;
+          }
         }
         .yield{
           float: right;
-          color: chocolate;
+          color: @chocolateBrown;
         }
         .meal-ingredients{
           width: 100%;
           max-height: 90%;
           li{
             margin-bottom: 4px;
+            margin-right: 6px;
+            &:nth-child(2n-1){
+              background-color: rgba(255,165,0,0.2);
+            }
           }
         }
       }
@@ -115,34 +137,39 @@ nav{
       margin: 0 auto;
       width: 90%;
       .diet-labels{
-        background-color: #ffdf7e;
-        border: 2px solid orange;
+        background-color: @lemonYellow;
+        border: 2px solid @orange;
         border-radius: 10px;
+        .diet-title{
+          color: @chocolateBrown;
+        }
         .diet-details{
           span{
-            background-color: lemonchiffon;
-            border: 2px solid orange;
+            background-color: @lemonChiffon;
+            border: 2px solid @orange;
             border-radius: 10px;
             margin-bottom: 3px;
+            color: @chocolateBrown;
+            font-weight: bold;
           }
         }
       }
       .nutrition-facts{
         min-height: 170px;
-        background-color: #ffdf7e;
-        border: 2px solid orange;
+        background-color: @lemonYellow;
+        border: 2px solid @orange;
         border-radius: 10px;
         li{
           font-size: large;
           &:hover,
           strong:hover{
-            color: chocolate;
+            color: @chocolateBrown;
           }
         }
       }
       .music{
-        background-color: #ffdf7e;
-        border: 2px solid orange;
+        background-color: @lemonYellow;
+        border: 2px solid @orange;
         border-radius: 10px;
         audio{
           width: 100%;
@@ -153,51 +180,41 @@ nav{
 }
 /****************************** nutrition-music - end ******************************/
 
-/***************************** health-tag - start *****************************/
-/*#music-container{
-  .container{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    .columns{
-      margin: 0 auto;
-      width: 90%;
-      .music{
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        background-color: #ffdf7e;
-        height: 200px;
-      }
-      .music-description{
-        border-bottom-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        background-color: orange;
-      }
-    }
-  }
-}*/
-/****************************** health-tag - end ******************************/
 
 /***************************** footer - start *****************************/
 footer{
-   .container{
-     .columns{
-     margin: 0 auto;
-       width: 90%;
-       background-color: #ffdf7e;
-       border-bottom-right-radius: 10px;
-       border-top-right-radius: 10px;
-       height: 70px;
-       h1{
-         line-height: 60px;
-         background-color: #ffdf7e;
-       }
-       button{
-         height: 70px;
-         background-color: orange;
-         border-radius: 10px;
-         cursor: pointer;
-       }
-     }
-   }
+  .container{
+    .columns{
+      width: 90%;
+      margin: 0 auto;
+      height: 60px;
+      background: rgb(255,223,126);
+      background: linear-gradient(90deg, rgba(255,223,126,1) 0%, rgba(255,223,126,1) 60%, rgba(255,165,0,1) 100%);
+      border-radius: 10px;
+      h1{
+        color: @chocolateBrown;
+        text-shadow: 2px 2px 5px rgba(210,105,46,.5);
+      }
+      button{
+        height: 60px;
+        background-color: transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 2px solid @lemonYellow;
+        &:hover{
+          box-shadow: 2px 2px 2px @lemonYellow;
+          .title{
+            color: rgba(210,105,46,1);
+            text-shadow: 2px 2px 2px @lemonYellow;
+          }
+        }
+        .title{
+          color: @lemonYellow;
+          width: 100%;
+          text-shadow: 2px 2px 2px rgba(210,105,46,.5);
+        }
+      }
+    }
+  }
 }
 /****************************** footer - end ******************************/
