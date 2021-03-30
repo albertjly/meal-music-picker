@@ -9,10 +9,10 @@ recipeSave = function(){
    for (let i = 0; i < arr[0].length; i++) {
         let li = document.createElement("li");
         li.textContent = arr[0][i]
-        ul.appendChild(li);
+        recipeCon.appendChild(li); 
         
    }
-   recipeCon.appendChild(ul); 
+   
     //recipeCon.innerHTML=`<ul>${arr[0].map(i=>`<li>${i}</li>`)}</ul>`
    // localStorageItems.join("");
     //arr[0].map(i=>{

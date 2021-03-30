@@ -7,7 +7,7 @@
     <title>Meal & Music Recipe Box</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/bulma.box.css">
     <!--insert css link-->
     <link rel="stylesheet" href="">
 </head>
@@ -15,17 +15,25 @@
 <body>
 
    <!-- Header-->
+   <body>
     <header>
         <div class="container">
-            <div class="columns is-gapless is-justify-content-space-between">
-                <h1 class="title is-1 column is-10">Recipe Box</h1>
-                <a href="index.html"><button><h2 class="title is-5">Return to Recipe Generator</h2></button></a>
-            </div></div>
-    </header>
+
+            <div class="columns is-mobile is-justify-content-space-between is-align-content-center">
+                <h1 class="title is-size-3-mobile is-size-1-desktop is-size-1-tablet is-1 column is-10 pl-4 m-0">Recipe Box</h1>
+                <a href="index.html"><button><h2 class="title is-5 size-7-mobile is-size-5-desktop is-size-5-tablet ">Return to Recipe Generator</h2></button></a>
+                </button>
+            </div>
+        </div>
+
 
     <!--Recipe Displays-->
-    <div class="container recipes-box">
-        
+    <div class="recipe-container is-justify-content-space-between is-align-content-center is-mobile">
+        <div class="recipe column is-justify-content-center ">
+            <ul class="is-gapless  recipes-box">
+                <!--Saved Recipe Titles Appended Here-->  
+            </ul>
+        </div>
     </div>
 
     
@@ -38,6 +46,5 @@
     
     <script src="./assets/js/index.js"></script>
     <script src="./assets/js/box.js"></script>
-     <script src="./assets/js/index.js"></script>
 </body>
 </html>
