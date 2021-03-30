@@ -119,7 +119,8 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
   width: 90%;
 }
 #nutrition-music .container .columns .diet-labels {
-  background-color: #ffdf7e;
+  background: #ffdf7e;
+  background: linear-gradient(90deg, #ffdf7e 0%, #ffeda7 100%);
   border: 2px solid #ffa500;
   border-radius: 10px;
 }
@@ -136,7 +137,8 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
 }
 #nutrition-music .container .columns .nutrition-facts {
   min-height: 170px;
-  background-color: #fffacd;
+  background: #ffdf7e;
+  background: linear-gradient(90deg, #ffeda7 0%, #fffacd 50%, #fff4ba 100%);
   border: 2px solid #ffa500;
   border-radius: 10px;
 }
@@ -151,7 +153,8 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
   background-color: rgba(255, 165, 0, 0.3);
 }
 #nutrition-music .container .columns .music {
-  background-color: #ffdf7e;
+  background: #ffdf7e;
+  background: linear-gradient(90deg, #fff4ba 0%, #ffdf7e 100%);
   border: 2px solid #ffa500;
   border-radius: 10px;
 }
