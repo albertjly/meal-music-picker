@@ -1,4 +1,5 @@
-button {
+button,
+audio {
   outline: none;
 }
 /***************************** header - start *****************************/
@@ -135,7 +136,7 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
 }
 #nutrition-music .container .columns .nutrition-facts {
   min-height: 170px;
-  background-color: #ffdf7e;
+  background-color: #fffacd;
   border: 2px solid #ffa500;
   border-radius: 10px;
 }
@@ -147,7 +148,7 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
   padding-left: 5px;
 }
 #nutrition-music .container .columns .nutrition-facts li:nth-child(2n-1) {
-  background-color: rgba(255, 250, 205, 0.8);
+  background-color: rgba(255, 165, 0, 0.3);
 }
 #nutrition-music .container .columns .music {
   background-color: #ffdf7e;
