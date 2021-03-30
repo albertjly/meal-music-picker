@@ -1,3 +1,4 @@
+/****Header****/
 header .container .columns {
     width: 90%;
     margin: 0 auto;
@@ -46,7 +47,6 @@ header .container .columns {
     margin: auto;
     width: 80%;
     margin-top: 30px;
-
   }
 
 
