@@ -79,7 +79,7 @@ var randomizeHandler = function (event) {
 };
 
 
-}
+
 var title;
 //fetch meal information 
 var getRecipeData = function () {

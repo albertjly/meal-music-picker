@@ -1,0 +1,62 @@
+header .container .columns {
+    width: 90%;
+    margin: 0 auto;
+    height: 80px;
+    background: #ffdf7e;
+    background: linear-gradient(90deg, #ffdf7e 0%, #ffdf7e 60%, #ffa500 100%);
+    border-radius: 10px;
+  }
+  header .container .columns h1 {
+    color: #d2692e;
+    text-shadow: 2px 2px 5px rgba(210, 105, 46, 0.5);
+  }
+  header .container .columns button {
+    height: 80px;
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid #ffdf7e;
+  }
+  header .container .columns button:hover {
+    box-shadow: 2px 2px 2px #ffdf7e;
+  }
+  header .container .columns button:hover .title {
+    color: #d2692e;
+    text-shadow: 2px 2px 2px #ffdf7e;
+  }
+  header .container .columns button .title {
+    color: #ffdf7e;
+    width: 100%;
+    text-shadow: 2px 2px 2px rgba(210, 105, 46, 0.5);
+  }
+
+ .container .columns {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+ /****recipe box *******/
+
+  .recipe-container  {
+    background-color: #fffacd;
+    border: 2px solid #ffa500;
+    border-radius: 10px;
+    margin: 50px;
+    width: 80%;
+
+  }
+.container .column .recipe .recipes-title  {
+    display: inline-block;
+  }
+.container .column .recipe .recipes-title  h2 {
+    color: #d2692e;
+    text-shadow: 1px 1px 1px #d2692e;
+  }
+
+.container .column .recipe .recipes-box {
+    width: 100%;
+  }
+.container .column .recipe .recipes-box li {
+    margin-bottom: 4px;
+    margin-right: 6px;
+  }
