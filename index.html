@@ -13,10 +13,9 @@
 <body>
     <header>
         <div class="container">
-
-            <div class="columns is-mobile is-justify-content-space-between is-align-content-center">
-                <h1 class="title is-1 column is-10 pl-4 m-0">Healthy Meal</h1>
-                <button href="box.html" class="column is-2 p-0">
+            <div class="columns is-flex-mobile is-justify-content-space-between is-align-content-center">
+                <h1 class="title is-1 column is-10 is-7-mobile pl-4 m-0">Healthy Meal</h1>
+                <button href="box.html" class="column is-2 is-5-mobile p-0">
                     <p class="title is-5 column m-0 p-1">Jump to</p>
                     <p class="title is-5 column m-0 p-1">Recipe Box</p>
                 </button>
@@ -199,8 +198,12 @@
 
                 <div class="music column is-6 ml-1">
                     <figure>
-                        <figcaption>A Song Based on Your Meal Preferences:</figcaption>
-                        <audio class="is-primary" id="audio" controls></audio>
+                        <figcaption class="has-text-centered title is-4 mb-3">A Song Based on Your Meal Preferences:</figcaption>
+                        <div class="music-detail m-0 columns is-justify-content-space-between">
+                            <i class="music-title column is-6 p-1">Song Title: 'Squad'</i>
+                            <i class="music-artist column is-6 p-1">Artist: Cheeky Beef</i>
+                        </div>
+                        <audio class="mt-4" id="audio" controls="" src="https://cdns-preview-5.dzcdn.net/stream/c-5430da91b5a1019301c070d4932f4b7b-3.mp3"></audio>
                     </figure>
                 </div>
 
@@ -212,14 +215,13 @@
     <footer class="mt-2">
         <div class="container">
 
-            <div class="columns is-mobile is-justify-content-space-between is-align-content-center">
+            <div class="columns is-flex-mobile is-justify-content-space-between is-align-content-center">
                 <h1 class="title is-3 column is-5 pl-4 m-0 is-italic">Meal and music on us</h1>
                 <h1 class="title is-3 column is-5 m-0 is-italic is-flex-grow-1">Please enjoy the process</h1>
-                <button href="#" onclick="saveStorage()" class="column is-2 p-0">
+                <button href="#" onclick="saveStorage()" class="column is-2 p-0  is-4-mobile">
                     <p class="title is-6 column m-0 p-1">Save to</p>
                     <p class="title is-6 column m-0 p-1">Recipe Box</p>
                 </button>
-
             </div>
         </div>
     </footer>
