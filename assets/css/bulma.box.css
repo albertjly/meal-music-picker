@@ -41,22 +41,13 @@ header .container .columns {
     background-color: #fffacd;
     border: 2px solid #ffa500;
     border-radius: 10px;
-    margin: 50px;
+    overflow: hidden;
+    display: flex;
+    margin: auto;
     width: 80%;
+    margin-top: 30px;
 
   }
-.container .column .recipe .recipes-title  {
-    display: inline-block;
-  }
-.container .column .recipe .recipes-title  h2 {
-    color: #d2692e;
-    text-shadow: 1px 1px 1px #d2692e;
-  }
 
-.container .column .recipe .recipes-box {
-    width: 100%;
-  }
-.container .column .recipe .recipes-box li {
-    margin-bottom: 4px;
-    margin-right: 6px;
-  }
+
+
