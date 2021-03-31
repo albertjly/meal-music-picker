@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
 
             <div class="columns is-flex-mobile is-justify-content-space-between is-align-content-center">
                 <h1 class="title is-size-4-mobile is-size-1-desktop is-size-1-tablet column is-10 pl-4 m-0">Music My Meal</h1>
+                <!-- Recipe Box Button -->
                 <a href="./box.html" class="column is-2 is-5-mobile p-0" type="submit">
                     <p class="title is-size-7-mobile is-size-5-desktop is-size-5-tablet column m-0 p-1 mt-1">Jump To</p>
                     <p class="title is-size-7-mobile is-size-5-desktop is-size-5-tablet column m-0 p-1">Recipe Box</p>
@@ -24,11 +26,11 @@
         </div>
     </header>
 
-    <!-- list  -->
+    <!-- Nav Bar  -->
     <nav>
         <div class="container is-justify-content-center is-mobile">
             <ul class="columns is-justify-content-center is-gapless is-variable">
-                <!-- meal type list -->
+                <!-- Meal Type List -->
                 <li class="dropdown is-hoverable column is-one-fifth m-2 level" id="mealType">
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
@@ -56,7 +58,7 @@
                     </div>
                 </li>
 
-                <!-- protein type list -->
+                <!-- Protein Type List -->
                 <li class="dropdown is-hoverable column is-one-fifth m-2">
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
@@ -90,7 +92,7 @@
                     </div>
                 </li>
 
-                <!-- health tag list -->
+                <!-- Health Tag List -->
                 <li class="dropdown is-hoverable column is-one-fifth m-2">
                     <div class="dropdown-trigger">
                         <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
@@ -133,7 +135,7 @@
                     </div>
                 </li>
                 <li class="dropdown column is-one-fifth m-2">
-
+                    <!-- Randomize Button -->
                     <button class="button btn-random" type="submit">
                         <span>Randomize</span>
                     </button>
@@ -142,13 +144,15 @@
         </div>
     </nav>
 
-    <!-- meal section start  -->
+    <!-- Meal Section Start  -->
     <section id="meal">
         <div class="container is-mobile">
             <div class="columns is-justify-content-center">
+                <!-- Image Section -->
                 <div class="meal-img column is-4 p-0">
                     <img src="./assets/images/music_my_meal_logo.png" alt="" class="default-img">
                 </div>
+                <!-- Ingredients Section -->
                 <div class="meal-detail column is-8 ml-2">
                     <div class="meal-title title is-3 mb-2">
                         <h1 class="title is-size-5-mobile is-size-3-desktop"></h1>
@@ -159,22 +163,25 @@
             </div>
         </div>
     </section>
-    <!-- meal section end  -->
+    <!-- Meal Section End  -->
 
-    <!-- nutrition section start  -->
+    <!-- Nutrition and Music Section  -->
     <section id="nutrition-music">
         <div class="container">
             <div class="columns is-justify-content-space-between">
+                <!-- Diet Label Section -->
                 <div class="diet-labels column is-3">
                     <div class="diet-title title is-5 mb-2">Diet Labels:</div>
                     <div class="diet-details">
                     </div>
                 </div>
+                <!-- Nutrition Facts Section -->
                 <div class="nutrition-facts column is-3 is-flex-shrink-1 ml-1">
                     <div class="nutrition-title title is-5 mb-2">Nutrition Facts:</div>
                     <ul class="column p-0" id="nutrition-facts"></ul>
                 </div>
 
+                <!-- Music Section -->
                 <div class="music column is-6 ml-1">
                     <figure>
                         <figcaption class="has-text-centered title is-4 mb-3">A Song Based on Your Meal Preferences:</figcaption>
@@ -189,13 +196,14 @@
             </div>
         </div>
     </section>
-    <!-- nutrition section end  -->
+    <!-- Nutrition and Music Section END  -->
 
-    <!-- footer start -->
+    <!-- Footer Start -->
     <footer class="mt-2">
         <div class="container">
             <div class="columns is-flex-mobile is-justify-content-space-between is-align-content-center">
                 <h1 class="title is-size-4-desktop is-size-6-mobile column is-10 pl-4 m-0 is-italic">We choose the meal and the music, you enjoy the process.</h1>
+                <!-- Save Recipe Button -->
                 <a href="#" onclick="saveStorage()" class="column is-2 p-0 is-4-mobile" type="submit">
                     <p class="title is-size-7-mobile is-size-6-desktop is-size-6-tablet column m-0 p-1">Save to</p>
                     <p class="title is-size-7-mobile is-size-6-desktop is-size-6-tablet  column m-0 p-1">Recipe Box</p>
@@ -203,7 +211,7 @@
             </div>
         </div>
     </footer>
-    <!-- footer end  -->
+    <!-- Footer End  -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="./assets/js/index.js"></script>
