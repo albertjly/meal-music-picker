@@ -203,6 +203,7 @@ footer .container .columns button .title {
   text-shadow: 2px 2px 2px rgba(210, 105, 46, 0.5);
 }
 /****************************** footer - end ******************************/
+
 /*************max-width*************/
 @media screen and (max-width: 768px) {
   header .container .columns h1 {
@@ -247,3 +248,4 @@ footer .container .columns button .title {
 }
 /*************min-width*************/
 /*# sourceMappingURL=index.css.map */
+
