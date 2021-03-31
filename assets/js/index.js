@@ -73,9 +73,6 @@ var randomizeHandler = function (event) {
         getRecipeData();
         getMusic();
     }
-    
-    
-
 };
 
 
@@ -93,14 +90,13 @@ var getRecipeData = function () {
             .then(function(response){
                 if (response.ok) {
                     response.json().then(function (data) {
-                       // console.log(data);
                       
-                        //random
+                        //random integer function
                         function getRandomInt() {
                             return Math.floor(Math.random() * 9) +1;   
                         }
 
-                        //recipeie data 
+                        //recipe data 
                         var randomInt = getRandomInt();
                         title = data.hits[randomInt].recipe.label;
                         var img = data.hits[randomInt].recipe.image;
@@ -115,29 +111,55 @@ var getRecipeData = function () {
                              "<strong>Fat: </strong>" + Math.round(data.hits[randomInt].recipe.totalNutrients.FAT.quantity) + data.hits[randomInt].recipe.totalNutrients.FAT.unit,
                             "<strong>Sugar: </strong>" + Math.round(data.hits[randomInt].recipe.totalNutrients.SUGAR.quantity) + data.hits[randomInt].recipe.totalNutrients.SUGAR.unit
                         ];
-
-                        console.log(title, dietLabels);
-                        console.log(randomInt);
                         
+                        //append data to page
                         displayRecipe(title, img, yield, ingridents, dietLabels, nutritionInfo);
-                        //store to local storage
-                        //resolve();
-
-
                     });
                 } 
                 else {
-                        alert("Error: " + response.statusText);
-                        //reject();
-                    }
-            })
-            // .catch(function (error) {
-            //     alert("Unable to connect to recipe API");
-            //     return;
-            // });
-    
-};
+                        //modal error response status
+                        var modal = document.createElement("div");
+                        modal.setAttribute("class", "modal is-active is-mobile");
+                        var modalBack = document.createElement("div");
+                        modalBack.setAttribute("class", "modal-background");
+                        var modalContent = document.createElement("div");
+                        modalContent.setAttribute("class", "modal-content is-clipped");
+                        modalContent.innerHTML = "Error: " + response.statusText;
+                        var modalButton = document.createElement("button");
+                        modalButton.setAttribute("class", "modal-close is-large");
+                        modalButton.setAttribute("aria-label", "close");
+                        modalButton.setAttribute("type", "submit");
 
+                        modal.append(modalBack,modalContent,modalButton);
+                        $("body").append(modal);
+
+                        modalButton.addEventListener("click", function() {
+                            modal.classList.remove('is-active')
+                        });
+                }
+            })
+            .catch(function(error){
+                    //modal API unavailable
+                    var modal = document.createElement("div");
+                    modal.setAttribute("class", "modal is-active is-mobile");
+                    var modalBack = document.createElement("div");
+                    modalBack.setAttribute("class", "modal-background");
+                    var modalContent = document.createElement("div");
+                    modalContent.setAttribute("class", "modal-content is-clipped");
+                    modalContent.innerHTML = "Unable to connect to recipe API" 
+                    var modalButton = document.createElement("button");
+                    modalButton.setAttribute("class", "modal-close is-large");
+                    modalButton.setAttribute("aria-label", "close");
+                    modalButton.setAttribute("type", "submit");
+
+                    modal.append(modalBack,modalContent,modalButton);
+                    $("body").append(modal);
+
+                    modalButton.addEventListener("click", function() {
+                        modal.classList.remove('is-active')
+                    });
+             });
+};
 
 // display recipe inforamtion
 var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutritionInfo) {
@@ -167,7 +189,6 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
         mealIngr.setAttribute("class", "is-lower-alpha column is-6");
         mealIngr.innerHTML = ingridents[i];
         mealIngr.setAttribute('is-flex-direction-row','flex-direction: row');
-        //mealIngr.style.display = "flex flex-column";
         mealIngredientsCon.appendChild(mealIngr);
     }
     // add diet labels to page ARRAY
@@ -184,20 +205,12 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
             dietLabelEl.setAttribute('is-flex-direction-column','flex-direction: column');
             dietLabelEl.setAttribute('is-justify-align-center', 'justify-align: center');
             dietLabelEl.setAttribute('is-flex-wrap-wrap', 'flex-wrap: wrap');
-    
-           
             dietLabelEl.innerHTML = dietLabels[i];
-        
-            //dietLabelEl.innerHTML = dietLabels[i];
             dietLabelCon.append(dietLabelEl);
         }
     }    
     
     //add nutrion info to page 
-    // var nutritionTitle =document.createElement("div");
-    // nutritionTitle.setAttribute("class", "diet-title title is-5 mb-2");
-    // nutritionTitle.innerHTML = "Nutrition Facts:"
-    // nutritionInfoCon.append();
     for (var i = 0; i<nutritionInfo.length; i++) {
         var nutrition = document.createElement("li");
         nutrition.innerHTML = nutritionInfo[i];
@@ -228,28 +241,23 @@ var getMusic = function(){
          var songArtist = "  Artist: " + response.data[randomSong].artist.name ;
          
 
-    //append to html
+    //music data appended to page
      var musicPlay = document.getElementById('audio');
      musicPlay.src = chosenMusic ;
-    
-     // var songHeader = document.createElement('h1');
-     // songHeader.setAttribute('class', 'subtitle is-4 is-size-4-mobile is-size-4-desktop is-size-3-tablet');
-     // songHeader.innerHTML = songTitle;
      musicTitleCon.innerHTML = songTitle;
      musicArtistCon.innerHTML = songArtist;
-     // musicTitleCon.append(songArtist);
      })
 
 }
 
     
-
+//save to local storage
 var saveStorage = function(){
      localStorage.setItem(title, JSON.stringify(title))   
 }   
 
 
-
+//clear on refresh
 var clear = function () {
     mealIngredientsCon.innerHTML = ""; 
     mealYieldCon.innerHTML = ""; 
@@ -263,4 +271,3 @@ var clear = function () {
 
 //event listeners for search click
 randomButton.addEventListener("click", randomizeHandler);
-
