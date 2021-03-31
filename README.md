@@ -11,8 +11,8 @@ This is a web application that generates a recipie, nutirion facts along with a 
 
 ## Screenshot
 ![screenshot of startpage](/assets/images/startpage.png)
-![screenshot of randomized](/assets/images/)
-![screenshot of recipe box page](/assets/images/)
+![screenshot of randomized](/assets/images/randomized.png)
+![screenshot of recipe box page](/assets/images/recipe-box-page.png)
 
 
 ## User Story
