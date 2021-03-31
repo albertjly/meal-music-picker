@@ -9,7 +9,7 @@ recipeSave = function(){
    for (let i = 0; i < arr[0].length; i++) {
         let li = document.createElement("li");
         li.textContent = arr[0][i];
-        recipeCon.appendChild(li); 
+        recipeCon.appendChild(li);
         
    }
    
