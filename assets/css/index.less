@@ -1,4 +1,4 @@
-button{
+button, audio{
   outline: none;
 }
 
@@ -88,7 +88,7 @@ nav{
       margin: 0 auto;
       width: 90%;
       .meal-img{
-      max-height: 320px;
+        max-height: 320px;
         background-color: @lemonYellow;
         border: 2px solid @orange;
         border-radius: 10px;
@@ -96,6 +96,7 @@ nav{
         display: flex;
         justify-content: center;
         align-items: center;
+          width: 100%;
         img{
           width: 100%;
           vertical-align: center;
@@ -119,7 +120,7 @@ nav{
         }
         .meal-ingredients{
           width: 100%;
-          max-height: 90%;
+          max-height: 85%;
           li{
             margin-bottom: 4px;
             margin-right: 6px;
@@ -142,7 +143,8 @@ nav{
       margin: 0 auto;
       width: 90%;
       .diet-labels{
-        background-color: @lemonYellow;
+        background: rgb(255,223,126);
+        background: linear-gradient(90deg, rgba(255,223,126,1) 0%, rgba(255,237,167,1) 100%);
         border: 2px solid @orange;
         border-radius: 10px;
         .diet-title{
@@ -161,23 +163,40 @@ nav{
       }
       .nutrition-facts{
         min-height: 170px;
-        background-color: @lemonYellow;
+        background: rgb(255,223,126);
+        background: linear-gradient(90deg, rgba(255,237,167,1) 0%, rgba(255,250,205,1) 50%, rgba(255,244,186,1) 100%);
         border: 2px solid @orange;
         border-radius: 10px;
+        .nutrition-title{
+          color: @chocolateBrown;
+        }
         li{
           font-size: large;
-          &:hover,
-          strong:hover{
-            color: @chocolateBrown;
+          padding-left: 5px;
+          &:nth-child(2n-1){
+            background-color: rgba(255,165,0,.3);
           }
         }
       }
       .music{
-        background-color: @lemonYellow;
+        background: rgb(255,223,126);
+        background: linear-gradient(90deg, rgba(255,244,186,1) 0%, rgba(255,223,126,1) 100%);
         border: 2px solid @orange;
         border-radius: 10px;
         audio{
           width: 100%;
+        }
+        figcaption.title{
+          color: @chocolateBrown;
+        }
+        .music-detail{
+          //background-color: red;
+          i{
+            font-size: 1rem;
+            font-weight: bold;
+            color: @chocolateBrown;
+            //text-shadow: 0 1px 3px @lemonChiffon;
+          }
         }
       }
     }
@@ -223,3 +242,96 @@ footer{
   }
 }
 /****************************** footer - end ******************************/
+
+/*************max-width*************/
+@media screen and (max-width: 1200px){
+
+}
+
+@media screen and (max-width: 992px){
+
+}
+
+@media screen and (max-width: 768px){
+  header .container .columns{
+    h1{
+      margin: 0;
+      padding: 0;
+      line-height: 70px;
+      font-size: 8vw;
+    }
+    button{
+      max-width: 100px;
+      p{
+        font-size: 4.5vw;
+      }
+    }
+  }
+
+  nav .container .columns .dropdown{
+    margin: 8px auto !important;
+    width: 85%;
+  }
+
+  #meal .container .columns{
+    .meal-img{
+      margin-bottom: 10px;
+      max-height: 100%;
+    }
+    .meal-detail{
+      max-height: 100%;
+      height: 100%;
+      margin-left: 0 !important;
+    }
+  }
+
+  #nutrition-music .container .columns{
+    .diet-labels{
+      margin-bottom: 10px;
+    }
+    .nutrition-facts{
+      margin-bottom: 10px;
+      margin-left: 0 !important;
+    }
+    .music{
+      margin-left: 0 !important;
+    }
+  }
+
+  footer .container .columns{
+    h1{
+      font-size: 4vw;
+      padding: 3vw;
+    }
+  }
+
+}
+
+@media screen and (max-width: 576px){
+
+}
+
+@media screen and (max-width: 350px){
+
+}
+
+/*************min-width*************/
+@media screen and (min-width: 350px){
+
+}
+
+@media screen and (min-width: 576px){
+
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 992px){
+
+}
+
+@media screen and (min-width: 1200px){
+
+}
