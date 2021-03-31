@@ -13,133 +13,148 @@
 <body>
     <header>
         <div class="container">
-            <div class="columns is-gapless is-justify-content-space-between">
-                <h1 class="title is-1 column is-10">Healthy Meal</h1>
-                <a href="box.html"><button><h2 class="title is-5">Jump to Recipe Box</h2></button></a>
-            </div></div>
-    </header>
-    <!-- list  -->
-    <nav class="container is-justify-content-center">
-        <ul class="columns is-justify-content-center is-gapless is-variable">
-            <!-- meal type list -->
-            <li class="dropdown is-hoverable column is-one-fifth m-2" id="mealType">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
-                        <span id="meal-input">Meal Type</span>
-                        <span class="icon is-small ml-5">
-                            <i class="fas fa-angle-down ml-5" aria-hidden="true"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu1" role="menu">
-                    <div class="dropdown-content">
-                        <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Breakfast")'>
-                            Breakfast
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Lunch")'>
-                            Lunch
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Dinner")'>
-                            Dinner
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Snack")'>
-                            Snack
-                        </a>
-                    </div>
-                </div>
-            </li>
 
-            <!-- protein type list -->
-            <li class="dropdown is-hoverable column is-one-fifth m-2">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-                        <span id="protien-input">Protein</span>
-                        <span class="icon is-small ml-5">
-                            <i class="fas fa-angle-down ml-5" aria-hidden="true"></i>
+            <div class="columns is-flex-mobile is-justify-content-space-between is-align-content-center">
+                <h1 class="title is-size-4-mobile is-size-1-desktop is-size-1-tablet column is-10 pl-4 m-0">Music My Meal</h1>
+                <a href="./box.html" class="column is-2 is-5-mobile p-0" type="submit">
+                    <p class="title is-size-7-mobile is-size-5-desktop is-size-5-tablet column m-0 p-1 mt-1">Jump To</p>
+                    <p class="title is-size-7-mobile is-size-5-desktop is-size-5-tablet column m-0 p-1">Recipe Box</p>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- list  -->
+    <nav>
+        <div class="container is-justify-content-center is-mobile">
+            <ul class="columns is-justify-content-center is-gapless is-variable">
+                <!-- meal type list -->
+                <li class="dropdown is-hoverable column is-one-fifth m-2 level" id="mealType">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
+                            <span id="meal-input">Meal Type</span>
+                            <span class="icon is-small ml-4">
+                            <i class="fas fa-angle-down ml-4" aria-hidden="true"></i>
                         </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-                    <div class="dropdown-content">
-                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Chicken")'>
-                            Chicken
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Beef")'>
-                            Beef
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Pork")'>
-                            Pork
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Fish")'>
-                            Fish
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Turkey")'>
-                           Turkey
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Vegetarian")'>
-                            Vegetarian
-                         </a>
-                     </div>
-                </div>
-            </li>
-            <!-- health tag list -->
-            <li class="dropdown is-hoverable column is-one-fifth m-2">
-                <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
-                        <span id="health-input">Health Tags</span>
-                        <span class="icon is-small ml-5">
-                            <i class="fas fa-angle-down ml-5" aria-hidden="false"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu3" role="menu">
-                    <div class="dropdown-content">
-                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Alcohol-free")'>
-                            Alcohol-free
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Dairy-free")'>
-                            Dairy-free
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Shellfish-free")'>
-                            Shellfish-free
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Gluten-free")'>
-                            Gluten-free
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Pork-free")'>
-                            Pork-free
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Peanut-Free")'>
-                            Peanut-free
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Vegan")'>
-                            Vegan
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Vegetarian")'>
-                            Vegetarian
-                        </a>
-                        <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Soy")'>
-                            Soy
-                        </a>
+                        </button>
                     </div>
-                </div>
-            </li>
-            <li class="column is-one-fifth m-2">
-                <button class="button btn-random" type="submit">
-                    Randomize
-                </button>
-            </li>
-        </ul>
+                    <div class="dropdown-menu" id="dropdown-menu1" role="menu">
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Breakfast")'>
+                                Breakfast
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Lunch")'>
+                                Lunch
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Dinner")'>
+                                Dinner
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateMealDropDown("Snack")'>
+                                Snack
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- protein type list -->
+                <li class="dropdown is-hoverable column is-one-fifth m-2">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                            <span id="protien-input">Protein</span>
+                            <span class="icon is-small ml-4">
+                            <i class="fas fa-angle-down ml-4" aria-hidden="true"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Chicken")'>
+                                Chicken
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Beef")'>
+                                Beef
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Pork")'>
+                                Pork
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Fish")'>
+                                Fish
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Turkey")'>
+                                Turkey
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateProteinDropDown("Vegetarian")'>
+                                Vegetarian
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- health tag list -->
+                <li class="dropdown is-hoverable column is-one-fifth m-2">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                            <span id="health-input">Health Tags</span>
+                            <span class="icon is-small ml-4">
+                            <i class="fas fa-angle-down ml-4" aria-hidden="false"></i>
+                        </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu3" role="menu">
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Alcohol-free")'>
+                                Alcohol-free
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Dairy-free")'>
+                                Dairy-free
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Shellfish-free")'>
+                                Shellfish-free
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Gluten-free")'>
+                                Gluten-free
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Pork-free")'>
+                                Pork-free
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Peanut-Free")'>
+                                Peanut-free
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Vegan")'>
+                                Vegan
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Vegetarian")'>
+                                Vegetarian
+                            </a>
+                            <a href="#" class="dropdown-item" onclick= 'updateHealthDropDown("Soy")'>
+                                Soy
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown column is-one-fifth m-2">
+
+                    <button class="button btn-random" type="submit">
+                        <span>Randomize</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
     </nav>
+
     <!-- meal section start  -->
     <section id="meal">
-        <div class="container">
-            <div class="columns">
-                <div class="meal-img column is-8"></div>
-                <div class="meal-detail column is-4">
-                    <div class="meal-title title is-3"></div>
-                    <div class="yield"></div>
-                    <div class="meal-ingredients"></div>
+        <div class="container is-mobile">
+            <div class="columns is-justify-content-center">
+                <div class="meal-img column is-4 p-0">
+                    <img src="./assets/images/music_my_meal_logo.png" alt="" class="default-img">
+                </div>
+                <div class="meal-detail column is-8 ml-2">
+                    <div class="meal-title title is-3 mb-2">
+                        <h1 class="title is-size-5-mobile is-size-3-desktop"></h1>
+                    </div>
+                    <div class="yield title is-size-4-desktop is-size-6-mobile mr-5"><p></p></div>
+                    <ul class="meal-ingredients columns is-gapless ml-0 mr-0 is-flex-direction-column is-flex-wrap-wrap"></ul>
                 </div>
             </div>
         </div>
@@ -147,45 +162,48 @@
     <!-- meal section end  -->
 
     <!-- nutrition section start  -->
-    <section id="nutrition">
+    <section id="nutrition-music">
         <div class="container">
-            <div class="columns is-justify-content-center">
-                <div class="diet-labels column is-2 p-0">
-                    <div class="diet-title title is-3">Diet Labels</div>
-                    <div class="diet-details"></div>
+            <div class="columns is-justify-content-space-between">
+                <div class="diet-labels column is-3">
+                    <div class="diet-title title is-5 mb-2">Diet Labels:</div>
+                    <div class="diet-details">
+                    </div>
                 </div>
-                <div class="nutrition-facts column is-10 m-0">
-                    <div class="nutrition-title title is-3">Nutrition Facts</div>
-                    <div class="nutrition-details"></div>
+                <div class="nutrition-facts column is-3 is-flex-shrink-1 ml-1">
+                    <div class="nutrition-title title is-5 mb-2">Nutrition Facts:</div>
+                    <ul class="column p-0" id="nutrition-facts"></ul>
                 </div>
-            </div>
-        </div>
-    </section>
-     <!-- nutrition section end  -->
 
-    <section id="music-container">
-        <div class="container">
-            <div class="columns is-flex-direction-column">
-                <div class="music column is-12">
+                <div class="music column is-6 ml-1">
                     <figure>
-                        <figcaption>A Song Based on Your Meal Preferences:</figcaption>
-                            <audio id="audio" controls></audio>
+                        <figcaption class="has-text-centered title is-4 mb-3">A Song Based on Your Meal Preferences:</figcaption>
+                        <div class="music-detail m-0 columns is-justify-content-space-between">
+                            <i class="music-title column is-6 p-1"></i>
+                            <i class="music-artist column is-6 p-1"></i>
+                        </div>
+                        <audio class="mt-4" id="audio" controls="" src="https://cdns-preview-5.dzcdn.net/stream/c-5430da91b5a1019301c070d4932f4b7b-3.mp3"></audio>
                     </figure>
                 </div>
-                <div class="music-description column is-12">
-                    <div class="music-title title is-3"></div>
-                </div>
+
             </div>
         </div>
     </section>
-    <footer>
+    <!-- nutrition section end  -->
+
+    <!-- footer start -->
+    <footer class="mt-2">
         <div class="container">
-            <div class="columns is-gapless is-justify-content-space-between">
-                <h1 class="title is-1 column is-10">Healthy Meal</h1>
-                <a href="#" onclick="saveStorage()"><button><h2 class="title is-2">Save to Recipe Box</h2></button></a>
+            <div class="columns is-flex-mobile is-justify-content-space-between is-align-content-center">
+                <h1 class="title is-size-4-desktop is-size-6-mobile column is-10 pl-4 m-0 is-italic">We choose the meal and the music, you enjoy the process.</h1>
+                <a href="#" onclick="saveStorage()" class="column is-2 p-0 is-4-mobile" type="submit">
+                    <p class="title is-size-7-mobile is-size-6-desktop is-size-6-tablet column m-0 p-1">Save to</p>
+                    <p class="title is-size-7-mobile is-size-6-desktop is-size-6-tablet  column m-0 p-1">Recipe Box</p>
+                </a>
             </div>
         </div>
     </footer>
+    <!-- footer end  -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="./assets/js/index.js"></script>

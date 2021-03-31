@@ -1,6 +1,11 @@
-button{
+button, audio{
   outline: none;
 }
+
+@chocolateBrown: rgba(210,105,46,1);
+@orange: rgba(255,165,0,1);
+@lemonYellow: rgba(255,223,126,1);
+@lemonChiffon: rgba(255,250,205,1);
 
 /***************************** header - start *****************************/
 header{
@@ -9,19 +14,32 @@ header{
       width: 90%;
       margin: 0 auto;
       height: 80px;
-      line-height: 80px;
-      //text-align: center;
+      background: rgb(255,223,126);
+      background: linear-gradient(90deg, rgba(255,223,126,1) 0%, rgba(255,223,126,1) 60%, rgba(255,165,0,1) 100%);
+      border-radius: 10px;
       h1{
-        background-color: #ffdf7e;
+        color: @chocolateBrown;
+        text-shadow: 2px 2px 5px rgba(210,105,46,.5);
       }
-      button{
-        //float: right;
-        //width: 100px;
+      a{
         height: 80px;
-        background-color: orange;
+        background-color: transparent;
         border-radius: 10px;
-        //letter-spacing: 1px;
         cursor: pointer;
+        border: 2px solid @lemonYellow;
+        &:hover{
+          box-shadow: 2px 2px 2px @lemonYellow;
+          .title{
+            color: rgba(210,105,46,1);
+            text-shadow: 2px 2px 2px @lemonYellow;
+          }
+        }
+        .title{
+          text-align: center;
+          color: @lemonYellow;
+          width: 100%;
+          text-shadow: 2px 2px 2px rgba(210,105,46,.5);
+        }
       }
     }
   }
@@ -30,16 +48,32 @@ header{
 
 /***************************** nav - start *****************************/
 nav{
-  ul{
-    li{
-      background-color: #ffdf7e;
-      border: 2px solid orange;
-      border-radius: 8px;
-      .dropdown-trigger{
-        button{
+  .container{
+    ul{
+      li{
+        border: 2px solid @orange;
+        border-radius: 8px;
+        width: 100%;
+        .button{
+          font-weight: bolder;
+          background-color: @lemonYellow;
           width: 100%;
           height: 100%;
-          background-color: #ffdf7e;
+          span{
+            color: @chocolateBrown;
+          }
+        }
+        .dropdown-menu{
+          width: 100%;
+          .dropdown-content{
+            width: 100%;
+            background-color: @lemonChiffon;
+            .dropdown-item{
+              &:hover{
+                background-color: @lemonYellow;
+              }
+            }
+          }
         }
       }
     }
@@ -49,114 +83,253 @@ nav{
 
 /***************************** meal - start *****************************/
 #meal{
+  //display: none;
   .container{
     .columns{
       margin: 0 auto;
-      //display: flex;
       width: 90%;
-      height: 300px;
-      .meal-img{
-        //flex: 2;
-        background-color: #ffdf7e;
-        margin-right: 20px;
-        border: 2px solid orange;
+      .meal-pick, .default-img{
+        max-height: 320px;
+        background-color: @lemonYellow;
+        border: 2px solid @orange;
         border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
       }
       .meal-detail{
-        //flex: 1;
-        text-align: center;
-        background-color: lemonchiffon;
-        border: 2px solid orange;
+        max-height: 320px;
+        background-color: @lemonChiffon;
+        border: 2px solid @orange;
         border-radius: 10px;
+        .meal-title{
+          display: inline-block;
+          h1{
+            color: @chocolateBrown;
+            text-shadow: 1px 1px 1px @chocolateBrown;
+          }
+        }
+        .yield{
+          float: right;
+          color: @chocolateBrown;
+        }
+        .meal-ingredients{
+          width: 100%;
+          max-height: 85%;
+          li{
+            margin-bottom: 4px;
+            margin-right: 6px;
+            &:nth-child(2n-1){
+              background-color: rgba(255,165,0,0.2);
+            }
+          }
+        }
       }
     }
   }
 }
 /****************************** meal - end ******************************/
 
-/***************************** protein - start *****************************/
-#protein{
-  //background-color: blue;
+/***************************** nutrition-music - start *****************************/
+#nutrition-music{
   .container{
     margin-top: 10px;
     .columns{
       margin: 0 auto;
       width: 90%;
       .diet-labels{
-        //background-color: red;
-        ul li{
-          margin: 0.3rem;
-          a{
-            background-color: lemonchiffon;
-            border: 2px solid orange;
-            border-radius: 5px;
-            display: block;
-            width: 100%;
-            &:hover{
-              span{
-                color: orangered;
-                font-weight: bolder;
-              }
-            }
+        background: rgb(255,223,126);
+        background: linear-gradient(90deg, rgba(255,223,126,1) 0%, rgba(255,237,167,1) 100%);
+        border: 2px solid @orange;
+        border-radius: 10px;
+        .diet-title{
+          color: @chocolateBrown;
+        }
+        .diet-details{
+          span{
+            background-color: @lemonChiffon;
+            border: 2px solid @orange;
+            border-radius: 10px;
+            margin-bottom: 3px;
+            color: @chocolateBrown;
+            font-weight: bold;
           }
         }
       }
       .nutrition-facts{
-        background-color: #ffdf7e;
+        min-height: 170px;
+        background: rgb(255,223,126);
+        background: linear-gradient(90deg, rgba(255,237,167,1) 0%, rgba(255,250,205,1) 50%, rgba(255,244,186,1) 100%);
+        border: 2px solid @orange;
         border-radius: 10px;
+        .nutrition-title{
+          color: @chocolateBrown;
+        }
+        li{
+          font-size: large;
+          padding-left: 5px;
+          &:nth-child(2n-1){
+            background-color: rgba(255,165,0,.3);
+          }
+        }
       }
-    }
-  }
-}
-/****************************** protein - end ******************************/
-
-/***************************** health-tag - start *****************************/
-#health-tag{
-  .container{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    .columns{
-      margin: 0 auto;
-      width: 90%;
       .music{
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        background-color: #ffdf7e;
-        height: 200px;
-      }
-      .music-description{
-        border-bottom-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        background-color: orange;
+        background: rgb(255,223,126);
+        background: linear-gradient(90deg, rgba(255,244,186,1) 0%, rgba(255,223,126,1) 100%);
+        border: 2px solid @orange;
+        border-radius: 10px;
+        audio{
+          width: 100%;
+        }
+        figcaption.title{
+          color: @chocolateBrown;
+        }
+        .music-detail{
+          //background-color: red;
+          i{
+            font-size: 1rem;
+            font-weight: bold;
+            color: @chocolateBrown;
+            //text-shadow: 0 1px 3px @lemonChiffon;
+          }
+        }
       }
     }
   }
 }
-/****************************** health-tag - end ******************************/
+/****************************** nutrition-music - end ******************************/
+
 
 /***************************** footer - start *****************************/
 footer{
-   .container{
-     .columns{
-     margin: 0 auto;
-       width: 90%;
-       background-color: #ffdf7e;
-       height: 60px;
-       //text-align: center;
-       h1{
-         line-height: 60px;
-         background-color: #ffdf7e;
-       }
-       button{
-         //float: right;
-         //width: 100px;
-         height: 60px;
-         background-color: orange;
-         border-radius: 10px;
-         //letter-spacing: 1px;
-         cursor: pointer;
-       }
-     }
-   }
+  .container{
+    .columns{
+      width: 90%;
+      margin: 0 auto;
+      height: 60px;
+      background: rgb(255,223,126);
+      background: linear-gradient(90deg, rgba(255,223,126,1) 0%, rgba(255,223,126,1) 60%, rgba(255,165,0,1) 100%);
+      border-radius: 10px;
+      h1{
+        color: @chocolateBrown;
+        text-shadow: 2px 2px 5px rgba(210,105,46,.5);
+      }
+      a{
+        height: 60px;
+        background-color: transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        border: 2px solid @lemonYellow;
+        &:hover{
+          box-shadow: 2px 2px 2px @lemonYellow;
+          .title{
+            color: rgba(210,105,46,1);
+            text-shadow: 2px 2px 2px @lemonYellow;
+          }
+        }
+        .title{
+          text-align: center;
+          color: @lemonYellow;
+          width: 100%;
+          text-shadow: 2px 2px 2px rgba(210,105,46,.5);
+        }
+      }
+    }
+  }
 }
 /****************************** footer - end ******************************/
+
+/*************max-width*************/
+@media screen and (max-width: 1200px){
+
+}
+
+@media screen and (max-width: 992px){
+
+}
+
+@media screen and (max-width: 768px){
+  header .container .columns{
+    h1{
+      margin: 0;
+      padding: 0;
+      line-height: 70px;
+      font-size: 8vw;
+    }
+    button{
+      max-width: 100px;
+      p{
+        font-size: 4.5vw;
+      }
+    }
+  }
+
+  nav .container .columns .dropdown{
+    margin: 8px auto !important;
+    width: 85%;
+  }
+
+  #meal .container .columns{
+    .meal-img{
+      margin-bottom: 10px;
+      max-height: 100%;
+    }
+    .meal-detail{
+      max-height: 100%;
+      height: 100%;
+      margin-left: 0 !important;
+    }
+  }
+
+  #nutrition-music .container .columns{
+    .diet-labels{
+      margin-bottom: 10px;
+    }
+    .nutrition-facts{
+      margin-bottom: 10px;
+      margin-left: 0 !important;
+    }
+    .music{
+      margin-left: 0 !important;
+    }
+  }
+
+  footer .container .columns{
+    h1{
+      font-size: 4vw;
+      padding: 3vw;
+    }
+  }
+
+}
+
+@media screen and (max-width: 576px){
+
+}
+
+@media screen and (max-width: 350px){
+
+}
+
+/*************min-width*************/
+@media screen and (min-width: 350px){
+
+}
+
+@media screen and (min-width: 576px){
+
+}
+
+@media screen and (min-width: 768px){
+
+}
+
+@media screen and (min-width: 992px){
+
+}
+
+@media screen and (min-width: 1200px){
+
+}
