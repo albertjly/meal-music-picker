@@ -6,10 +6,11 @@ var mealTitleCon = document.querySelector(".meal-title");
 var mealYieldCon = document.querySelector(".yield");
 var mealIngredientsCon = document.querySelector(".meal-ingredients");
 var dietLabelCon = document.querySelector(".diet-details");
-var nutritionInfoCon = document.querySelector(".nutrition-facts");
+var nutritionInfoCon = document.querySelector("#nutrition-facts");
 var recipeBoxButton = document.querySelector(".box");
 var recipeCon = document.querySelector(".recipes-box"); 
 var musicTitleCon = document.querySelector(".music-title");
+var musicArtistCon = document.querySelector(".music-artist");
 
 //Recipies Key/ID
 var app_key = "3a6631ade0c97e6a097cc13ba9e1ff33";
@@ -107,12 +108,12 @@ var getRecipeData = function () {
                         var ingridents = data.hits[randomInt].recipe.ingredientLines;
                         var dietLabels = data.hits[randomInt].recipe.dietLabels;
                         var nutritionInfo = [
-                            "Calories: "+ Math.round(data.hits[randomInt].recipe.calories),
-                             "Chloesterol: "+ Math.round(data.hits[randomInt].recipe.totalNutrients.CHOLE.quantity) + data.hits[randomInt].recipe.totalNutrients.CHOLE.unit,
-                             "Carbs: "+ Math.round(data.hits[randomInt].recipe.totalNutrients.CHOCDF.quantity) + data.hits[randomInt].recipe.totalNutrients.CHOCDF.unit,
-                             "Sodium: " +  Math.round(data.hits[randomInt].recipe.totalNutrients.NA.quantity) + data.hits[randomInt].recipe.totalNutrients.NA.unit,
-                             "Fat: " + Math.round(data.hits[randomInt].recipe.totalNutrients.FAT.quantity) + data.hits[randomInt].recipe.totalNutrients.FAT.unit,
-                            "Sugar: " + Math.round(data.hits[randomInt].recipe.totalNutrients.SUGAR.quantity) + data.hits[randomInt].recipe.totalNutrients.SUGAR.unit
+                            "<strong>Calories: </strong>"+ Math.round(data.hits[randomInt].recipe.calories),
+                             "<strong>Chloesterol: </strong>"+ Math.round(data.hits[randomInt].recipe.totalNutrients.CHOLE.quantity) + data.hits[randomInt].recipe.totalNutrients.CHOLE.unit,
+                             "<strong>Carbs: </strong>"+ Math.round(data.hits[randomInt].recipe.totalNutrients.CHOCDF.quantity) + data.hits[randomInt].recipe.totalNutrients.CHOCDF.unit,
+                             "<strong>Sodium: </strong>" +  Math.round(data.hits[randomInt].recipe.totalNutrients.NA.quantity) + data.hits[randomInt].recipe.totalNutrients.NA.unit,
+                             "<strong>Fat: </strong>" + Math.round(data.hits[randomInt].recipe.totalNutrients.FAT.quantity) + data.hits[randomInt].recipe.totalNutrients.FAT.unit,
+                            "<strong>Sugar: </strong>" + Math.round(data.hits[randomInt].recipe.totalNutrients.SUGAR.quantity) + data.hits[randomInt].recipe.totalNutrients.SUGAR.unit
                         ];
 
                         console.log(title, dietLabels);
@@ -146,12 +147,12 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     //add meal img to bpage 
     var mealImg = document.createElement("img");
     mealImg.setAttribute("src", img);
-    mealImg.setAttribute("class", "p-0")
+    mealImg.setAttribute("class", "meal-pick p-0")
     mealImageCon.append(mealImg);
     
     // add meal title 
     var mealTitle = document.createElement("h1");
-    mealTitle.setAttribute("class", "title is-3");
+    mealTitle.setAttribute("class", "title is-size-5-mobile is-size-3-desktop");
     mealTitle.innerHTML = title;
     mealTitleCon.append(mealTitle);
 
@@ -163,7 +164,7 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     //add indirgent to page ARRAY
     for (var i = 0; i<ingridents.length; i++) {
         var mealIngr = document.createElement("li");
-        mealIngr.setAttribute("class", "is-lower-alpha");
+        mealIngr.setAttribute("class", "is-lower-alpha column is-6");
         mealIngr.innerHTML = ingridents[i];
         mealIngr.setAttribute('is-flex-direction-row','flex-direction: row');
         //mealIngr.style.display = "flex flex-column";
@@ -173,6 +174,7 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     if (dietLabels.length === 0) {
         var dietLabelEl = document.createElement("span");
         dietLabelEl.innerHTML = "No diet labels exsits";
+        dietLabelEl.setAttribute("class", "tag is-large is-light");
          dietLabelCon.append(dietLabelEl);
 
     } else {
@@ -192,10 +194,10 @@ var displayRecipe = function (title, img, yield, ingridents, dietLabels, nutriti
     }    
     
     //add nutrion info to page 
-    var nutritionTitle =document.createElement("div");
-    nutritionTitle.setAttribute("class", "diet-title title is-5 mb-2");
-    nutritionTitle.innerHTML = "Nutrition Facts:"
-    nutritionInfoCon.append(nutritionTitle);
+    // var nutritionTitle =document.createElement("div");
+    // nutritionTitle.setAttribute("class", "diet-title title is-5 mb-2");
+    // nutritionTitle.innerHTML = "Nutrition Facts:"
+    // nutritionInfoCon.append();
     for (var i = 0; i<nutritionInfo.length; i++) {
         var nutrition = document.createElement("li");
         nutrition.innerHTML = nutritionInfo[i];
@@ -230,11 +232,12 @@ var getMusic = function(){
      var musicPlay = document.getElementById('audio');
      musicPlay.src = chosenMusic ;
     
-     var songHeader = document.createElement('h1');
-     songHeader.setAttribute('class', 'subtitle is-4 is-size-4-mobile is-size-4-desktop is-size-3-tablet');
-     songHeader.innerHTML = songTitle;
-     musicTitleCon.append(songHeader);
-     musicTitleCon.append(songArtist);
+     // var songHeader = document.createElement('h1');
+     // songHeader.setAttribute('class', 'subtitle is-4 is-size-4-mobile is-size-4-desktop is-size-3-tablet');
+     // songHeader.innerHTML = songTitle;
+     musicTitleCon.innerHTML = songTitle;
+     musicArtistCon.innerHTML = songArtist;
+     // musicTitleCon.append(songArtist);
      })
 
 }

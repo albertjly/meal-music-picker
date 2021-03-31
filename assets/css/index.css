@@ -15,21 +15,22 @@ header .container .columns h1 {
   color: #d2692e;
   text-shadow: 2px 2px 5px rgba(210, 105, 46, 0.5);
 }
-header .container .columns button {
+header .container .columns a {
   height: 80px;
   background-color: transparent;
   border-radius: 10px;
   cursor: pointer;
   border: 2px solid #ffdf7e;
 }
-header .container .columns button:hover {
+header .container .columns a:hover {
   box-shadow: 2px 2px 2px #ffdf7e;
 }
-header .container .columns button:hover .title {
+header .container .columns a:hover .title {
   color: #d2692e;
   text-shadow: 2px 2px 2px #ffdf7e;
 }
-header .container .columns button .title {
+header .container .columns a .title {
+  text-align: center;
   color: #ffdf7e;
   width: 100%;
   text-shadow: 2px 2px 2px rgba(210, 105, 46, 0.5);
@@ -66,7 +67,8 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
   margin: 0 auto;
   width: 90%;
 }
-#meal .container .columns .meal-img {
+#meal .container .columns .meal-pick,
+#meal .container .columns .default-img {
   max-height: 320px;
   background-color: #ffdf7e;
   border: 2px solid #ffa500;
@@ -76,10 +78,6 @@ nav .container ul li .dropdown-menu .dropdown-content .dropdown-item:hover {
   justify-content: center;
   align-items: center;
   width: 100%;
-}
-#meal .container .columns .meal-img img {
-  width: 100%;
-  vertical-align: center;
 }
 #meal .container .columns .meal-detail {
   max-height: 320px;
@@ -183,27 +181,27 @@ footer .container .columns h1 {
   color: #d2692e;
   text-shadow: 2px 2px 5px rgba(210, 105, 46, 0.5);
 }
-footer .container .columns button {
+footer .container .columns a {
   height: 60px;
   background-color: transparent;
   border-radius: 10px;
   cursor: pointer;
   border: 2px solid #ffdf7e;
 }
-footer .container .columns button:hover {
+footer .container .columns a:hover {
   box-shadow: 2px 2px 2px #ffdf7e;
 }
-footer .container .columns button:hover .title {
+footer .container .columns a:hover .title {
   color: #d2692e;
   text-shadow: 2px 2px 2px #ffdf7e;
 }
-footer .container .columns button .title {
+footer .container .columns a .title {
+  text-align: center;
   color: #ffdf7e;
   width: 100%;
   text-shadow: 2px 2px 2px rgba(210, 105, 46, 0.5);
 }
 /****************************** footer - end ******************************/
-
 /*************max-width*************/
 @media screen and (max-width: 768px) {
   header .container .columns h1 {
@@ -248,4 +246,3 @@ footer .container .columns button .title {
 }
 /*************min-width*************/
 /*# sourceMappingURL=index.css.map */
-
